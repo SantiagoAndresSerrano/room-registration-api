@@ -1,0 +1,879 @@
+[
+    {
+        "label": "SQLAlchemy",
+        "importPath": "flask_sqlalchemy",
+        "description": "flask_sqlalchemy",
+        "isExtraImport": true,
+        "detail": "flask_sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Marshmallow",
+        "importPath": "flask_marshmallow",
+        "description": "flask_marshmallow",
+        "isExtraImport": true,
+        "detail": "flask_marshmallow",
+        "documentation": {}
+    },
+    {
+        "label": "fields",
+        "importPath": "marshmallow",
+        "description": "marshmallow",
+        "isExtraImport": true,
+        "detail": "marshmallow",
+        "documentation": {}
+    },
+    {
+        "label": "fields",
+        "importPath": "marshmallow",
+        "description": "marshmallow",
+        "isExtraImport": true,
+        "detail": "marshmallow",
+        "documentation": {}
+    },
+    {
+        "label": "fields",
+        "importPath": "marshmallow",
+        "description": "marshmallow",
+        "isExtraImport": true,
+        "detail": "marshmallow",
+        "documentation": {}
+    },
+    {
+        "label": "fields",
+        "importPath": "marshmallow",
+        "description": "marshmallow",
+        "isExtraImport": true,
+        "detail": "marshmallow",
+        "documentation": {}
+    },
+    {
+        "label": "fields",
+        "importPath": "marshmallow",
+        "description": "marshmallow",
+        "isExtraImport": true,
+        "detail": "marshmallow",
+        "documentation": {}
+    },
+    {
+        "label": "fields",
+        "importPath": "marshmallow",
+        "description": "marshmallow",
+        "isExtraImport": true,
+        "detail": "marshmallow",
+        "documentation": {}
+    },
+    {
+        "label": "fields",
+        "importPath": "marshmallow",
+        "description": "marshmallow",
+        "isExtraImport": true,
+        "detail": "marshmallow",
+        "documentation": {}
+    },
+    {
+        "label": "fields",
+        "importPath": "marshmallow",
+        "description": "marshmallow",
+        "isExtraImport": true,
+        "detail": "marshmallow",
+        "documentation": {}
+    },
+    {
+        "label": "fields",
+        "importPath": "marshmallow",
+        "description": "marshmallow",
+        "isExtraImport": true,
+        "detail": "marshmallow",
+        "documentation": {}
+    },
+    {
+        "label": "DateTime",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "and_",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "and_",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "func",
+        "importPath": "sqlalchemy.sql",
+        "description": "sqlalchemy.sql",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.sql",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "flask_api",
+        "description": "flask_api",
+        "isExtraImport": true,
+        "detail": "flask_api",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "flask_api",
+        "description": "flask_api",
+        "isExtraImport": true,
+        "detail": "flask_api",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "flask_api",
+        "description": "flask_api",
+        "isExtraImport": true,
+        "detail": "flask_api",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "flask_api",
+        "description": "flask_api",
+        "isExtraImport": true,
+        "detail": "flask_api",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "flask_api",
+        "description": "flask_api",
+        "isExtraImport": true,
+        "detail": "flask_api",
+        "documentation": {}
+    },
+    {
+        "label": "NoResultFound",
+        "importPath": "sqlalchemy.exc",
+        "description": "sqlalchemy.exc",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.exc",
+        "documentation": {}
+    },
+    {
+        "label": "NoResultFound",
+        "importPath": "sqlalchemy.exc",
+        "description": "sqlalchemy.exc",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.exc",
+        "documentation": {}
+    },
+    {
+        "label": "NoResultFound",
+        "importPath": "sqlalchemy.exc",
+        "description": "sqlalchemy.exc",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.exc",
+        "documentation": {}
+    },
+    {
+        "label": "NoResultFound",
+        "importPath": "sqlalchemy.exc",
+        "description": "sqlalchemy.exc",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.exc",
+        "documentation": {}
+    },
+    {
+        "label": "NoResultFound",
+        "importPath": "sqlalchemy.exc",
+        "description": "sqlalchemy.exc",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.exc",
+        "documentation": {}
+    },
+    {
+        "label": "cross_origin",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "cross_origin",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "cross_origin",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "cross_origin",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "cross_origin",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "create_app",
+        "importPath": "app",
+        "description": "app",
+        "isExtraImport": true,
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "app.config.db",
+        "description": "app.config.db",
+        "peekOfCode": "db = SQLAlchemy()",
+        "detail": "app.config.db",
+        "documentation": {}
+    },
+    {
+        "label": "ma",
+        "kind": 5,
+        "importPath": "app.config.ma",
+        "description": "app.config.ma",
+        "peekOfCode": "ma = Marshmallow()",
+        "detail": "app.config.ma",
+        "documentation": {}
+    },
+    {
+        "label": "Bloque",
+        "kind": 6,
+        "importPath": "app.models.bloque",
+        "description": "app.models.bloque",
+        "peekOfCode": "class Bloque(db.Model):\n    __tablename__ = 'bloque'\n    id_edificio = db.Column(db.String(25), primary_key=True)\n    nombre = db.Column(db.String(255), nullable=False)\n    piso = db.Column(db.Integer, nullable=False)\n    salon = db.relationship('Salon')\n    def __repr__(self):\n        return '<Bloque %r>' % self.id_edificio % self.nombre %self.piso\nclass BloqueSchema(ma.Schema):\n    class Meta:",
+        "detail": "app.models.bloque",
+        "documentation": {}
+    },
+    {
+        "label": "BloqueSchema",
+        "kind": 6,
+        "importPath": "app.models.bloque",
+        "description": "app.models.bloque",
+        "peekOfCode": "class BloqueSchema(ma.Schema):\n    class Meta:\n        fields = ('id_edificio', 'nombre', 'piso')\nbloque_schema = BloqueSchema()\nbloques_schema = BloqueSchema(many=True)",
+        "detail": "app.models.bloque",
+        "documentation": {}
+    },
+    {
+        "label": "bloque_schema",
+        "kind": 5,
+        "importPath": "app.models.bloque",
+        "description": "app.models.bloque",
+        "peekOfCode": "bloque_schema = BloqueSchema()\nbloques_schema = BloqueSchema(many=True)",
+        "detail": "app.models.bloque",
+        "documentation": {}
+    },
+    {
+        "label": "bloques_schema",
+        "kind": 5,
+        "importPath": "app.models.bloque",
+        "description": "app.models.bloque",
+        "peekOfCode": "bloques_schema = BloqueSchema(many=True)",
+        "detail": "app.models.bloque",
+        "documentation": {}
+    },
+    {
+        "label": "DetalleHorario",
+        "kind": 6,
+        "importPath": "app.models.detalle_horario",
+        "description": "app.models.detalle_horario",
+        "peekOfCode": "class DetalleHorario(db.Model):\n    __tablename__ = 'detalle_horario'\n    id_det_hor = db.Column(db.Integer, primary_key=True)\n    horario = db.Column(db.Integer, db.ForeignKey('horario.id_horario'))\n    grupo_materia = db.Column(db.Integer, db.ForeignKey('grupo_materia.id_grup_mat'))\n    horarioRel: db.relationship('Horario', back_populates=\"detallle_horario\")\n    grupo_materiaRel: db.relationship('GrupoMateria', back_populates=\"detallle_horario\")\nclass DetalleHorarioSchema(ma.Schema):\n    class Meta:\n        fields = ('id_grup_mat','horarioRel', 'grupo_materiaRel')",
+        "detail": "app.models.detalle_horario",
+        "documentation": {}
+    },
+    {
+        "label": "DetalleHorarioSchema",
+        "kind": 6,
+        "importPath": "app.models.detalle_horario",
+        "description": "app.models.detalle_horario",
+        "peekOfCode": "class DetalleHorarioSchema(ma.Schema):\n    class Meta:\n        fields = ('id_grup_mat','horarioRel', 'grupo_materiaRel')\n    horarioRel = fields.Nested(HorarioSchema(only=('id_horario', 'hora_inicio','hora_final')))\n    grupo_materiaRel = fields.Nested(GrupoMateriaSchema(only=('id_grup_mat','periodo', 'cupos', 'grupoRel', 'materiaRel')))\ndet_horario_schema = DetalleHorarioSchema()\ndets_horario_schema = DetalleHorarioSchema(many=True)",
+        "detail": "app.models.detalle_horario",
+        "documentation": {}
+    },
+    {
+        "label": "det_horario_schema",
+        "kind": 5,
+        "importPath": "app.models.detalle_horario",
+        "description": "app.models.detalle_horario",
+        "peekOfCode": "det_horario_schema = DetalleHorarioSchema()\ndets_horario_schema = DetalleHorarioSchema(many=True)",
+        "detail": "app.models.detalle_horario",
+        "documentation": {}
+    },
+    {
+        "label": "dets_horario_schema",
+        "kind": 5,
+        "importPath": "app.models.detalle_horario",
+        "description": "app.models.detalle_horario",
+        "peekOfCode": "dets_horario_schema = DetalleHorarioSchema(many=True)",
+        "detail": "app.models.detalle_horario",
+        "documentation": {}
+    },
+    {
+        "label": "DetalleInventario",
+        "kind": 6,
+        "importPath": "app.models.detalle_inventario",
+        "description": "app.models.detalle_inventario",
+        "peekOfCode": "class DetalleInventario(db.Model):\n    __tablename__ = 'detalle_inventario'\n    id_detalle = db.Column(db.Integer, primary_key=True)\n    salon = db.Column(db.String(10), db.ForeignKey('salon.id_salon'))\n    tipo_inventario = db.Column(db.Integer, db.ForeignKey('tipo_inventario.id_tipo'))\n    salonRel = db.relationship('Salon')\n    tipoRel = db.relationship('TipoInventario')\nclass DetalleInventarioSchema(ma.Schema):\n    class Meta:\n        fields = ('id_detalle','salonRel', 'tipoRel')",
+        "detail": "app.models.detalle_inventario",
+        "documentation": {}
+    },
+    {
+        "label": "DetalleInventarioSchema",
+        "kind": 6,
+        "importPath": "app.models.detalle_inventario",
+        "description": "app.models.detalle_inventario",
+        "peekOfCode": "class DetalleInventarioSchema(ma.Schema):\n    class Meta:\n        fields = ('id_detalle','salonRel', 'tipoRel')\n    salonRel = fields.Nested(SalonSchema(only=('id_salon', 'tipo', 'estado', 'cupo', 'bloqueRel','grupo_materiaRel')))\n    tipoRel = fields.Nested(TipoInventarioSchema(only=(('id_tipo', 'nombre', 'descripcion'))))\ndetalleInven_schema = DetalleInventarioSchema()\ndetallesInven_schema = DetalleInventarioSchema(many=True)",
+        "detail": "app.models.detalle_inventario",
+        "documentation": {}
+    },
+    {
+        "label": "detalleInven_schema",
+        "kind": 5,
+        "importPath": "app.models.detalle_inventario",
+        "description": "app.models.detalle_inventario",
+        "peekOfCode": "detalleInven_schema = DetalleInventarioSchema()\ndetallesInven_schema = DetalleInventarioSchema(many=True)",
+        "detail": "app.models.detalle_inventario",
+        "documentation": {}
+    },
+    {
+        "label": "detallesInven_schema",
+        "kind": 5,
+        "importPath": "app.models.detalle_inventario",
+        "description": "app.models.detalle_inventario",
+        "peekOfCode": "detallesInven_schema = DetalleInventarioSchema(many=True)",
+        "detail": "app.models.detalle_inventario",
+        "documentation": {}
+    },
+    {
+        "label": "Grupo",
+        "kind": 6,
+        "importPath": "app.models.grupo",
+        "description": "app.models.grupo",
+        "peekOfCode": "class Grupo(db.Model):\n    __tablename__ = 'grupo'\n    id_grupo = db.Column(db.String(1), primary_key=True)\n    estado = db.Column(db.Integer, nullable=False)\n    grupo_materia = db.relationship('GrupoMateria')\n    def __repr__(self):\n        return '<Grupo %r>' % self.id_grupo % self.estado\nclass GrupoSchema(ma.Schema):\n    class Meta:\n        fields = ('id_grupo', 'estado')",
+        "detail": "app.models.grupo",
+        "documentation": {}
+    },
+    {
+        "label": "GrupoSchema",
+        "kind": 6,
+        "importPath": "app.models.grupo",
+        "description": "app.models.grupo",
+        "peekOfCode": "class GrupoSchema(ma.Schema):\n    class Meta:\n        fields = ('id_grupo', 'estado')\ngrupo_schema = GrupoSchema()\ngrupos_schema = GrupoSchema(many=True)",
+        "detail": "app.models.grupo",
+        "documentation": {}
+    },
+    {
+        "label": "grupo_schema",
+        "kind": 5,
+        "importPath": "app.models.grupo",
+        "description": "app.models.grupo",
+        "peekOfCode": "grupo_schema = GrupoSchema()\ngrupos_schema = GrupoSchema(many=True)",
+        "detail": "app.models.grupo",
+        "documentation": {}
+    },
+    {
+        "label": "grupos_schema",
+        "kind": 5,
+        "importPath": "app.models.grupo",
+        "description": "app.models.grupo",
+        "peekOfCode": "grupos_schema = GrupoSchema(many=True)",
+        "detail": "app.models.grupo",
+        "documentation": {}
+    },
+    {
+        "label": "GrupoMateria",
+        "kind": 6,
+        "importPath": "app.models.grupo_materia",
+        "description": "app.models.grupo_materia",
+        "peekOfCode": "class GrupoMateria(db.Model):\n    __tablename__ = 'grupo_materia'\n    id_grup_mat = db.Column(db.Integer, primary_key=True)\n    periodo = db.Column(db.String(25), nullable=False)\n    cupos = db.Column(db.Integer, nullable=False)\n    grupo = db.Column(db.String(1), db.ForeignKey('grupo.id_grupo'))\n    materia = db.Column(db.Integer, db.ForeignKey('materia.id_materia'))\n    grupoRel= db.relationship('Grupo', back_populates=\"grupo_materia\")\n    materiaRel= db.relationship('Materia')\n    detalle_horario:db.relationship('DetalleHorario', back_populates=\"grupo_materiaRel\")",
+        "detail": "app.models.grupo_materia",
+        "documentation": {}
+    },
+    {
+        "label": "GrupoMateriaSchema",
+        "kind": 6,
+        "importPath": "app.models.grupo_materia",
+        "description": "app.models.grupo_materia",
+        "peekOfCode": "class GrupoMateriaSchema(ma.Schema):\n    class Meta:\n        fields = ('id_grup_mat','periodo', 'cupos', 'grupoRel', 'materiaRel')\n    grupoRel = fields.Nested(GrupoSchema(only=('id_grupo', 'estado')))\n    materiaRel = fields.Nested(MateriaSchema(only=('id_materia', 'nombre')))\ngrupo_materia_schema = GrupoMateriaSchema()\ngrupos_materia_schema = GrupoMateriaSchema(many=True)",
+        "detail": "app.models.grupo_materia",
+        "documentation": {}
+    },
+    {
+        "label": "grupo_materia_schema",
+        "kind": 5,
+        "importPath": "app.models.grupo_materia",
+        "description": "app.models.grupo_materia",
+        "peekOfCode": "grupo_materia_schema = GrupoMateriaSchema()\ngrupos_materia_schema = GrupoMateriaSchema(many=True)",
+        "detail": "app.models.grupo_materia",
+        "documentation": {}
+    },
+    {
+        "label": "grupos_materia_schema",
+        "kind": 5,
+        "importPath": "app.models.grupo_materia",
+        "description": "app.models.grupo_materia",
+        "peekOfCode": "grupos_materia_schema = GrupoMateriaSchema(many=True)",
+        "detail": "app.models.grupo_materia",
+        "documentation": {}
+    },
+    {
+        "label": "Horario",
+        "kind": 6,
+        "importPath": "app.models.horario",
+        "description": "app.models.horario",
+        "peekOfCode": "class Horario(db.Model):\n    __tablename__ = 'horario'\n    id_horario = db.Column(db.String(1), primary_key=True)\n    hora_inicio = db.Column(DateTime(timezone=True),server_default=func.now(),nullable=False)\n    hora_final = db.Column(DateTime(timezone=True),server_default=func.now(),nullable=False)\n    detalle_horario: db.relationship('DetalleHorario', back_populates=\"horarioRel\")\n    def __repr__(self):\n        return '<Horario %r>' % self.id_horario % self.hora_inicio & self.hora_Final\nclass HorarioSchema(ma.Schema):\n    class Meta:",
+        "detail": "app.models.horario",
+        "documentation": {}
+    },
+    {
+        "label": "HorarioSchema",
+        "kind": 6,
+        "importPath": "app.models.horario",
+        "description": "app.models.horario",
+        "peekOfCode": "class HorarioSchema(ma.Schema):\n    class Meta:\n        fields = ('id_horario', 'hora_inicio','hora_final')\nhorario_schema = HorarioSchema()\nhorarios_schema = HorarioSchema(many=True)",
+        "detail": "app.models.horario",
+        "documentation": {}
+    },
+    {
+        "label": "horario_schema",
+        "kind": 5,
+        "importPath": "app.models.horario",
+        "description": "app.models.horario",
+        "peekOfCode": "horario_schema = HorarioSchema()\nhorarios_schema = HorarioSchema(many=True)",
+        "detail": "app.models.horario",
+        "documentation": {}
+    },
+    {
+        "label": "horarios_schema",
+        "kind": 5,
+        "importPath": "app.models.horario",
+        "description": "app.models.horario",
+        "peekOfCode": "horarios_schema = HorarioSchema(many=True)",
+        "detail": "app.models.horario",
+        "documentation": {}
+    },
+    {
+        "label": "Materia",
+        "kind": 6,
+        "importPath": "app.models.materia",
+        "description": "app.models.materia",
+        "peekOfCode": "class Materia(db.Model):\n    __tablename__ = 'materia'\n    id_materia = db.Column(db.String(1), primary_key=True)\n    nombre = db.Column(db.String(50), nullable=False)\n    grupo_materia = db.relationship('GrupoMateria')\n    def __repr__(self):\n        return '<Materia %r>' % self.id_materia % self.nombre\nclass MateriaSchema(ma.Schema):\n    class Meta:\n        fields = ('id_materia', 'nombre')",
+        "detail": "app.models.materia",
+        "documentation": {}
+    },
+    {
+        "label": "MateriaSchema",
+        "kind": 6,
+        "importPath": "app.models.materia",
+        "description": "app.models.materia",
+        "peekOfCode": "class MateriaSchema(ma.Schema):\n    class Meta:\n        fields = ('id_materia', 'nombre')\nmateria_schema = MateriaSchema()\nmaterias_schema = MateriaSchema(many=True)",
+        "detail": "app.models.materia",
+        "documentation": {}
+    },
+    {
+        "label": "materia_schema",
+        "kind": 5,
+        "importPath": "app.models.materia",
+        "description": "app.models.materia",
+        "peekOfCode": "materia_schema = MateriaSchema()\nmaterias_schema = MateriaSchema(many=True)",
+        "detail": "app.models.materia",
+        "documentation": {}
+    },
+    {
+        "label": "materias_schema",
+        "kind": 5,
+        "importPath": "app.models.materia",
+        "description": "app.models.materia",
+        "peekOfCode": "materias_schema = MateriaSchema(many=True)",
+        "detail": "app.models.materia",
+        "documentation": {}
+    },
+    {
+        "label": "Salon",
+        "kind": 6,
+        "importPath": "app.models.salon",
+        "description": "app.models.salon",
+        "peekOfCode": "class Salon(db.Model):\n    __tablename__ = 'salon'\n    id_salon = db.Column(db.String(10), primary_key=True)\n    tipo = db.Column(db.Integer, nullable=False)\n    estado = db.Column(db.Integer, nullable=False)\n    cupo = db.Column(db.Integer, nullable=False)\n    grupo_materia = db.Column(db.Integer, db.ForeignKey('grupo_materia.id_grup_mat'))\n    bloque = db.Column(db.String(25), db.ForeignKey('bloque.id_edificio'))\n    bloqueRel= db.relationship('Bloque', back_populates=\"salon\")\n    grupo_materiaRel: db.relationship('GrupoMateria', back_populates=\"salonRel\")",
+        "detail": "app.models.salon",
+        "documentation": {}
+    },
+    {
+        "label": "SalonSchema",
+        "kind": 6,
+        "importPath": "app.models.salon",
+        "description": "app.models.salon",
+        "peekOfCode": "class SalonSchema(ma.Schema):\n    class Meta:\n        fields = ('id_salon', 'tipo', 'estado', 'cupo', 'bloqueRel', 'grupo_materiaRel')\n    bloqueRel = fields.Nested(BloqueSchema(only=(('id_edificio', 'nombre', 'piso'))))\n    grupo_materiaRel = fields.Nested(GrupoMateriaSchema(only=('id_grup_mat','periodo', 'cupos', 'grupoRel', 'materiaRel')))\nsalon_schema = SalonSchema()\nsalones_schema = SalonSchema(many=True)",
+        "detail": "app.models.salon",
+        "documentation": {}
+    },
+    {
+        "label": "salon_schema",
+        "kind": 5,
+        "importPath": "app.models.salon",
+        "description": "app.models.salon",
+        "peekOfCode": "salon_schema = SalonSchema()\nsalones_schema = SalonSchema(many=True)",
+        "detail": "app.models.salon",
+        "documentation": {}
+    },
+    {
+        "label": "salones_schema",
+        "kind": 5,
+        "importPath": "app.models.salon",
+        "description": "app.models.salon",
+        "peekOfCode": "salones_schema = SalonSchema(many=True)",
+        "detail": "app.models.salon",
+        "documentation": {}
+    },
+    {
+        "label": "TipoInventario",
+        "kind": 6,
+        "importPath": "app.models.tipo_inventario",
+        "description": "app.models.tipo_inventario",
+        "peekOfCode": "class TipoInventario(db.Model): \n    __tablename__ = 'tipo_inventario'\n    id_tipo = db.Column(db.Integer, primary_key=True)\n    nombre = db.Column(db.String(50), nullable=False)\n    descripcion = db.Column(db.String, nullable=False)\n    detalles = 'detalle_inventario',db.relationship('DetalleInventario', back_populates=\"tipo_inventario\")\n    def __repr__(self):\n        return '<TipoInventario %r>' % self.id_tipo % self.nombre %self.descripcion\nclass TipoInventarioSchema(ma.Schema):\n    class Meta:",
+        "detail": "app.models.tipo_inventario",
+        "documentation": {}
+    },
+    {
+        "label": "TipoInventarioSchema",
+        "kind": 6,
+        "importPath": "app.models.tipo_inventario",
+        "description": "app.models.tipo_inventario",
+        "peekOfCode": "class TipoInventarioSchema(ma.Schema):\n    class Meta:\n        fields = ('id_tipo', 'nombre', 'descripcion')\ntipoInven_schema = TipoInventarioSchema()\ntiposInven_schema = TipoInventarioSchema(many=True)",
+        "detail": "app.models.tipo_inventario",
+        "documentation": {}
+    },
+    {
+        "label": "tipoInven_schema",
+        "kind": 5,
+        "importPath": "app.models.tipo_inventario",
+        "description": "app.models.tipo_inventario",
+        "peekOfCode": "tipoInven_schema = TipoInventarioSchema()\ntiposInven_schema = TipoInventarioSchema(many=True)",
+        "detail": "app.models.tipo_inventario",
+        "documentation": {}
+    },
+    {
+        "label": "tiposInven_schema",
+        "kind": 5,
+        "importPath": "app.models.tipo_inventario",
+        "description": "app.models.tipo_inventario",
+        "peekOfCode": "tiposInven_schema = TipoInventarioSchema(many=True)",
+        "detail": "app.models.tipo_inventario",
+        "documentation": {}
+    },
+    {
+        "label": "getAllBloques",
+        "kind": 2,
+        "importPath": "app.routes.bloque",
+        "description": "app.routes.bloque",
+        "peekOfCode": "def getAllBloques():\n    try:\n        all_bloque = Bloque.query.all()\n        return bloques_schema.dump(all_bloque), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Bloques not found\", status.HTTP_401_UNAUTHORIZED",
+        "detail": "app.routes.bloque",
+        "documentation": {}
+    },
+    {
+        "label": "bloques",
+        "kind": 5,
+        "importPath": "app.routes.bloque",
+        "description": "app.routes.bloque",
+        "peekOfCode": "bloques = Blueprint(\"bloques\",__name__)\n#Retorna all bloques\n@bloques.route(\"/bloque\" , methods=[\"GET\"])\n@cross_origin()\ndef getAllBloques():\n    try:\n        all_bloque = Bloque.query.all()\n        return bloques_schema.dump(all_bloque), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Bloques not found\", status.HTTP_401_UNAUTHORIZED",
+        "detail": "app.routes.bloque",
+        "documentation": {}
+    },
+    {
+        "label": "getAllHorarios",
+        "kind": 2,
+        "importPath": "app.routes.horario",
+        "description": "app.routes.horario",
+        "peekOfCode": "def getAllHorarios():\n    try:\n        all_horarios = Horario.query.all()\n        return horarios_schema.dump(all_horarios), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Horarios not found\", status.HTTP_401_UNAUTHORIZED\n##Encontrar un horario\n@horarios.route(\"/horario/<string:id_horario>\", methods=[\"GET\"])\n@cross_origin()\ndef encontrarHorario(id_horario):",
+        "detail": "app.routes.horario",
+        "documentation": {}
+    },
+    {
+        "label": "encontrarHorario",
+        "kind": 2,
+        "importPath": "app.routes.horario",
+        "description": "app.routes.horario",
+        "peekOfCode": "def encontrarHorario(id_horario):\n    try:\n        horarioFound = Horario.query.filter(Horario.id_horario == id_horario).one()\n    except NoResultFound:\n        return \"Horario not found\", status.HTTP_401_UNAUTHORIZED\n    return horario_schema.dump(horarioFound), status.HTTP_200_OK",
+        "detail": "app.routes.horario",
+        "documentation": {}
+    },
+    {
+        "label": "horarios",
+        "kind": 5,
+        "importPath": "app.routes.horario",
+        "description": "app.routes.horario",
+        "peekOfCode": "horarios = Blueprint(\"horarios\",__name__)\n##Retorna todos los horarios\n@horarios.route(\"/horario\" , methods=[\"GET\"])\n@cross_origin()\ndef getAllHorarios():\n    try:\n        all_horarios = Horario.query.all()\n        return horarios_schema.dump(all_horarios), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Horarios not found\", status.HTTP_401_UNAUTHORIZED",
+        "detail": "app.routes.horario",
+        "documentation": {}
+    },
+    {
+        "label": "getDetalleinventario",
+        "kind": 2,
+        "importPath": "app.routes.inventario",
+        "description": "app.routes.inventario",
+        "peekOfCode": "def getDetalleinventario():\n    try:\n        allDetalles = DetalleInventario.query.all()\n        return detallesInven_schema.dump(allDetalles), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Detalles inventario not found\", status.HTTP_401_UNAUTHORIZED\n##Returns all tipos de elementos de un salón\n@inventario.route(\"/inventario/tipos\" , methods=[\"GET\"])\n@cross_origin()\ndef getAllTipoInventario():",
+        "detail": "app.routes.inventario",
+        "documentation": {}
+    },
+    {
+        "label": "getAllTipoInventario",
+        "kind": 2,
+        "importPath": "app.routes.inventario",
+        "description": "app.routes.inventario",
+        "peekOfCode": "def getAllTipoInventario():\n    try:\n        all_tipos = TipoInventario.query.all()\n        return tiposInven_schema.dump(all_tipos), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Tipo de inventario not found\", status.HTTP_401_UNAUTHORIZED\n##Retorna los elementos de un determinado salón\n##Editar el estado de un determinado elemento de un salón",
+        "detail": "app.routes.inventario",
+        "documentation": {}
+    },
+    {
+        "label": "inventario",
+        "kind": 5,
+        "importPath": "app.routes.inventario",
+        "description": "app.routes.inventario",
+        "peekOfCode": "inventario = Blueprint(\"inventario\",__name__)\n#Retorna todos los detalles de los inventarios\n@inventario.route(\"/inventario/detalleinventario/\", methods=[\"GET\"])\n@cross_origin()\ndef getDetalleinventario():\n    try:\n        allDetalles = DetalleInventario.query.all()\n        return detallesInven_schema.dump(allDetalles), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Detalles inventario not found\", status.HTTP_401_UNAUTHORIZED",
+        "detail": "app.routes.inventario",
+        "documentation": {}
+    },
+    {
+        "label": "getAllMateria",
+        "kind": 2,
+        "importPath": "app.routes.materia",
+        "description": "app.routes.materia",
+        "peekOfCode": "def getAllMateria():\n    try:\n        all_materia = Materia.query.all()\n        return materias_schema.dump(all_materia), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Materias not found\", status.HTTP_401_UNAUTHORIZED\n#Retorna todos los grupos materia existentes(115304-A)\n@materias.route(\"/materia/grupos\", methods=[\"GET\"])\n@cross_origin()\ndef getGrupoMateria():",
+        "detail": "app.routes.materia",
+        "documentation": {}
+    },
+    {
+        "label": "getGrupoMateria",
+        "kind": 2,
+        "importPath": "app.routes.materia",
+        "description": "app.routes.materia",
+        "peekOfCode": "def getGrupoMateria():\n    try:\n        all_grupos = GrupoMateria.query.all()\n        return grupos_materia_schema.dump(all_grupos), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Grupos de materias not found\", status.HTTP_401_UNAUTHORIZED",
+        "detail": "app.routes.materia",
+        "documentation": {}
+    },
+    {
+        "label": "materias",
+        "kind": 5,
+        "importPath": "app.routes.materia",
+        "description": "app.routes.materia",
+        "peekOfCode": "materias = Blueprint(\"materias\",__name__)\n#Retorna all materias\n@materias.route(\"/materia\" , methods=[\"GET\"])\n@cross_origin()\ndef getAllMateria():\n    try:\n        all_materia = Materia.query.all()\n        return materias_schema.dump(all_materia), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Materias not found\", status.HTTP_401_UNAUTHORIZED",
+        "detail": "app.routes.materia",
+        "documentation": {}
+    },
+    {
+        "label": "getAllSalones",
+        "kind": 2,
+        "importPath": "app.routes.salon",
+        "description": "app.routes.salon",
+        "peekOfCode": "def getAllSalones():\n    try:\n        all_salones = Salon.query.all()\n        return salones_schema.dump(all_salones), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Salones not found\", status.HTTP_401_UNAUTHORIZED\n##Encontrar un salón\n@salones.route(\"/salon/<string:id_salon>\", methods=[\"GET\"])\n@cross_origin()\ndef encontrarSalon(id_salon):",
+        "detail": "app.routes.salon",
+        "documentation": {}
+    },
+    {
+        "label": "encontrarSalon",
+        "kind": 2,
+        "importPath": "app.routes.salon",
+        "description": "app.routes.salon",
+        "peekOfCode": "def encontrarSalon(id_salon):\n    try:\n        salonFound = Salon.query.filter(Salon.id_salon == id_salon).one()\n    except NoResultFound:\n        return \"Salon not found\", status.HTTP_401_UNAUTHORIZED\n    return salon_schema.dump(salonFound), status.HTTP_200_OK\n##Editar el estado de un determinado salón \n# @salones.route(\"/salon/<string:salon>\", methods=[\"PUT\"])\n# @cross_origin()\n# def editarEstadoSalon():",
+        "detail": "app.routes.salon",
+        "documentation": {}
+    },
+    {
+        "label": "salones",
+        "kind": 5,
+        "importPath": "app.routes.salon",
+        "description": "app.routes.salon",
+        "peekOfCode": "salones = Blueprint(\"salones\",__name__)\n##Returns all salones\n@salones.route(\"/salon\" , methods=[\"GET\"])\n@cross_origin()\ndef getAllSalones():\n    try:\n        all_salones = Salon.query.all()\n        return salones_schema.dump(all_salones), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Salones not found\", status.HTTP_401_UNAUTHORIZED",
+        "detail": "app.routes.salon",
+        "documentation": {}
+    },
+    {
+        "label": "importlib_load_entry_point",
+        "kind": 2,
+        "importPath": "venv.Scripts.gunicorn-script",
+        "description": "venv.Scripts.gunicorn-script",
+        "peekOfCode": "def importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')\n    matches = (\n        entry_point\n        for entry_point in distribution(dist_name).entry_points\n        if entry_point.group == group and entry_point.name == name\n    )\n    return next(matches).load()\nglobals().setdefault('load_entry_point', importlib_load_entry_point)\nif __name__ == '__main__':",
+        "detail": "venv.Scripts.gunicorn-script",
+        "documentation": {}
+    },
+    {
+        "label": "__requires__",
+        "kind": 5,
+        "importPath": "venv.Scripts.gunicorn-script",
+        "description": "venv.Scripts.gunicorn-script",
+        "peekOfCode": "__requires__ = 'gunicorn==19.0.0'\ntry:\n    from importlib.metadata import distribution\nexcept ImportError:\n    try:\n        from importlib_metadata import distribution\n    except ImportError:\n        from pkg_resources import load_entry_point\ndef importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')",
+        "detail": "venv.Scripts.gunicorn-script",
+        "documentation": {}
+    },
+    {
+        "label": "importlib_load_entry_point",
+        "kind": 2,
+        "importPath": "venv.Scripts.gunicorn_django-script",
+        "description": "venv.Scripts.gunicorn_django-script",
+        "peekOfCode": "def importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')\n    matches = (\n        entry_point\n        for entry_point in distribution(dist_name).entry_points\n        if entry_point.group == group and entry_point.name == name\n    )\n    return next(matches).load()\nglobals().setdefault('load_entry_point', importlib_load_entry_point)\nif __name__ == '__main__':",
+        "detail": "venv.Scripts.gunicorn_django-script",
+        "documentation": {}
+    },
+    {
+        "label": "__requires__",
+        "kind": 5,
+        "importPath": "venv.Scripts.gunicorn_django-script",
+        "description": "venv.Scripts.gunicorn_django-script",
+        "peekOfCode": "__requires__ = 'gunicorn==19.0.0'\ntry:\n    from importlib.metadata import distribution\nexcept ImportError:\n    try:\n        from importlib_metadata import distribution\n    except ImportError:\n        from pkg_resources import load_entry_point\ndef importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')",
+        "detail": "venv.Scripts.gunicorn_django-script",
+        "documentation": {}
+    },
+    {
+        "label": "importlib_load_entry_point",
+        "kind": 2,
+        "importPath": "venv.Scripts.gunicorn_paster-script",
+        "description": "venv.Scripts.gunicorn_paster-script",
+        "peekOfCode": "def importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')\n    matches = (\n        entry_point\n        for entry_point in distribution(dist_name).entry_points\n        if entry_point.group == group and entry_point.name == name\n    )\n    return next(matches).load()\nglobals().setdefault('load_entry_point', importlib_load_entry_point)\nif __name__ == '__main__':",
+        "detail": "venv.Scripts.gunicorn_paster-script",
+        "documentation": {}
+    },
+    {
+        "label": "__requires__",
+        "kind": 5,
+        "importPath": "venv.Scripts.gunicorn_paster-script",
+        "description": "venv.Scripts.gunicorn_paster-script",
+        "peekOfCode": "__requires__ = 'gunicorn==19.0.0'\ntry:\n    from importlib.metadata import distribution\nexcept ImportError:\n    try:\n        from importlib_metadata import distribution\n    except ImportError:\n        from pkg_resources import load_entry_point\ndef importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')",
+        "detail": "venv.Scripts.gunicorn_paster-script",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "app = create_app()\nif __name__ == \"__main__\":\n    app.run(debug=True)",
+        "detail": "main",
+        "documentation": {}
+    }
+]
