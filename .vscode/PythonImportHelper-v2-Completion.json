@@ -346,6 +346,15 @@
         "documentation": {}
     },
     {
+        "label": "py_eureka_client.eureka_client",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "py_eureka_client.eureka_client",
+        "description": "py_eureka_client.eureka_client",
+        "detail": "py_eureka_client.eureka_client",
+        "documentation": {}
+    },
+    {
         "label": "db",
         "kind": 5,
         "importPath": "app.config.db",

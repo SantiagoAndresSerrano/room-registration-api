@@ -5,6 +5,7 @@ from flask_cors import CORS
 from flask_swagger_ui import get_swaggerui_blueprint
 import os
 from dotenv import load_dotenv
+import py_eureka_client.eureka_client as eureka_clients
 
 from .models.grupo_materia import GrupoMateria, grupos_materia_schema
 
@@ -38,6 +39,7 @@ def create_app(test_config=None):
     
     db.init_app(app)
     ma.init_app(app)
+    
 
     if test_config is None:
         app.config.from_pyfile('config.py', silent=True)
