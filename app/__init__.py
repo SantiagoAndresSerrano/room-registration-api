@@ -2,7 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_cors import CORS
-from flask_swagger_ui import get_swaggerui_blueprint
+from flasgger import Swagger, LazyString, LazyJSONEncoder
 import os
 from dotenv import load_dotenv
 import py_eureka_client.eureka_client as eureka_clients
@@ -15,10 +15,35 @@ from .routes.bloque import bloques
 from .routes.salon import salones
 from .routes.horario import horarios
 
+# host = os.environ.get('SITE_HOST', 'http://127.0.0.1:5000')
 
 def create_app(test_config=None):
+    swagger_template = {
+        "info": {
+            'title': 'Api Python Test',
+            'version': '0.1',
+            'description': 'This document contains the list of API services '
+                           'with Python.',
+        },
+        "host": "127.0.0.1:5000",
+        "securityDefinitions": {
+            "Bearer": {
+                "type": "apiKey",
+                "name": "Authorization",
+                "in": "header",
+                "description": 'JWT Authorization header using the Bearer scheme. '
+                               'Example: "Authorization: Bearer {token}"'
+            }
+        },
+        "security": [
+            {
+                "Bearer": []
+            }
+        ]
+    }
     app = Flask(__name__, instance_relative_config=True)
     CORS(app)
+    swagger = Swagger(app, template=swagger_template)
     db = SQLAlchemy(app)
     ma = Marshmallow(app)
     load_dotenv()
@@ -30,7 +55,10 @@ def create_app(test_config=None):
         DATABASE='postgresql://uz7o2tfmyylgx2xam70s:IF42pKqz6mS1Qgl4VCFx@b7ajzb3arliywy9f1q9k-postgresql.services.clever-cloud.com:5432/b7ajzb3arliywy9f1q9k'
     )
     
-    ##Blueprints
+    #Deshabilitar el modo estricto de acabado de una URL con /
+    app.url_map.strict_slashes = False 
+    
+    ##Registro de Blueprints
     app.register_blueprint(bloques)
     app.register_blueprint(salones)
     app.register_blueprint(inventario)

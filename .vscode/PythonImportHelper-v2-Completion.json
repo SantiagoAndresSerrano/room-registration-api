@@ -557,7 +557,7 @@
         "kind": 6,
         "importPath": "app.models.horario",
         "description": "app.models.horario",
-        "peekOfCode": "class Horario(db.Model):\n    __tablename__ = 'horario'\n    id_horario = db.Column(db.String(1), primary_key=True)\n    hora_inicio = db.Column(DateTime(timezone=True),server_default=func.now(),nullable=False)\n    hora_final = db.Column(DateTime(timezone=True),server_default=func.now(),nullable=False)\n    detalle_horario: db.relationship('DetalleHorario', back_populates=\"horarioRel\")\n    def __repr__(self):\n        return '<Horario %r>' % self.id_horario % self.hora_inicio & self.hora_Final\nclass HorarioSchema(ma.Schema):\n    class Meta:",
+        "peekOfCode": "class Horario(db.Model):\n    __tablename__ = 'horario'\n    id_horario = db.Column(db.Integer, primary_key=True)\n    hora_inicio = db.Column(DateTime(timezone=True),server_default=func.now(),nullable=False)\n    hora_final = db.Column(DateTime(timezone=True),server_default=func.now(),nullable=False)\n    detalle_horario: db.relationship('DetalleHorario', back_populates=\"horarioRel\")\n    def __repr__(self):\n        return '<Horario %r>' % self.id_horario % self.hora_inicio & self.hora_Final\nclass HorarioSchema(ma.Schema):\n    class Meta:",
         "detail": "app.models.horario",
         "documentation": {}
     },
@@ -701,7 +701,7 @@
         "kind": 2,
         "importPath": "app.routes.bloque",
         "description": "app.routes.bloque",
-        "peekOfCode": "def getAllBloques():\n    try:\n        all_bloque = Bloque.query.all()\n        return bloques_schema.dump(all_bloque), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Bloques not found\", status.HTTP_401_UNAUTHORIZED",
+        "peekOfCode": "def getAllBloques():\n    \"\"\"Returning list all Bloques\n    ---\n    tags:\n      - Bloque\n    definitions:\n      Bloque:\n        type: object\n        properties:\n          id_edificio:",
         "detail": "app.routes.bloque",
         "documentation": {}
     },
@@ -710,7 +710,7 @@
         "kind": 5,
         "importPath": "app.routes.bloque",
         "description": "app.routes.bloque",
-        "peekOfCode": "bloques = Blueprint(\"bloques\",__name__)\n#Retorna all bloques\n@bloques.route(\"/bloque\" , methods=[\"GET\"])\n@cross_origin()\ndef getAllBloques():\n    try:\n        all_bloque = Bloque.query.all()\n        return bloques_schema.dump(all_bloque), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Bloques not found\", status.HTTP_401_UNAUTHORIZED",
+        "peekOfCode": "bloques = Blueprint(\"bloques\",__name__)\n#Retorna all bloques\n@bloques.route(\"/bloque\" , methods=[\"GET\"])\n@cross_origin()\ndef getAllBloques():\n    \"\"\"Returning list all Bloques\n    ---\n    tags:\n      - Bloque\n    definitions:",
         "detail": "app.routes.bloque",
         "documentation": {}
     },
@@ -719,7 +719,7 @@
         "kind": 2,
         "importPath": "app.routes.horario",
         "description": "app.routes.horario",
-        "peekOfCode": "def getAllHorarios():\n    try:\n        all_horarios = Horario.query.all()\n        return horarios_schema.dump(all_horarios), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Horarios not found\", status.HTTP_401_UNAUTHORIZED\n##Encontrar un horario\n@horarios.route(\"/horario/<string:id_horario>\", methods=[\"GET\"])\n@cross_origin()\ndef encontrarHorario(id_horario):",
+        "peekOfCode": "def getAllHorarios():\n    \"\"\"Returning list all horario\n    ---\n    tags:\n      - Horario\n    definitions:\n      Horario:\n        type: object\n        properties:\n          id_horario:",
         "detail": "app.routes.horario",
         "documentation": {}
     },
@@ -728,7 +728,7 @@
         "kind": 2,
         "importPath": "app.routes.horario",
         "description": "app.routes.horario",
-        "peekOfCode": "def encontrarHorario(id_horario):\n    try:\n        horarioFound = Horario.query.filter(Horario.id_horario == id_horario).one()\n    except NoResultFound:\n        return \"Horario not found\", status.HTTP_401_UNAUTHORIZED\n    return horario_schema.dump(horarioFound), status.HTTP_200_OK",
+        "peekOfCode": "def encontrarHorario(id_horario):\n    \"\"\"Returning A Horario\n    ---\n    tags:\n      - Horario\n    parameters:\n      - name: id_horario\n        in: path\n        type: integer\n        required: true",
         "detail": "app.routes.horario",
         "documentation": {}
     },
@@ -737,7 +737,7 @@
         "kind": 5,
         "importPath": "app.routes.horario",
         "description": "app.routes.horario",
-        "peekOfCode": "horarios = Blueprint(\"horarios\",__name__)\n##Retorna todos los horarios\n@horarios.route(\"/horario\" , methods=[\"GET\"])\n@cross_origin()\ndef getAllHorarios():\n    try:\n        all_horarios = Horario.query.all()\n        return horarios_schema.dump(all_horarios), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Horarios not found\", status.HTTP_401_UNAUTHORIZED",
+        "peekOfCode": "horarios = Blueprint(\"horarios\",__name__)\n##Retorna todos los horarios\n@horarios.route(\"/horario\" , methods=[\"GET\"])\n@cross_origin()\ndef getAllHorarios():\n    \"\"\"Returning list all horario\n    ---\n    tags:\n      - Horario\n    definitions:",
         "detail": "app.routes.horario",
         "documentation": {}
     },
@@ -773,7 +773,7 @@
         "kind": 2,
         "importPath": "app.routes.materia",
         "description": "app.routes.materia",
-        "peekOfCode": "def getAllMateria():\n    try:\n        all_materia = Materia.query.all()\n        return materias_schema.dump(all_materia), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Materias not found\", status.HTTP_401_UNAUTHORIZED\n#Retorna todos los grupos materia existentes(115304-A)\n@materias.route(\"/materia/grupos\", methods=[\"GET\"])\n@cross_origin()\ndef getGrupoMateria():",
+        "peekOfCode": "def getAllMateria():\n    \"\"\"Returning list all Materias\n    ---\n    tags:\n      - Materia\n    definitions:\n      Materia:\n        type: object\n        properties:\n          id_materia:",
         "detail": "app.routes.materia",
         "documentation": {}
     },
@@ -782,7 +782,7 @@
         "kind": 2,
         "importPath": "app.routes.materia",
         "description": "app.routes.materia",
-        "peekOfCode": "def getGrupoMateria():\n    try:\n        all_grupos = GrupoMateria.query.all()\n        return grupos_materia_schema.dump(all_grupos), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Grupos de materias not found\", status.HTTP_401_UNAUTHORIZED",
+        "peekOfCode": "def getGrupoMateria():\n    \"\"\"Retorna todos los grupos de las materias existentes(Ej:115304-A)\n    ---\n    tags:\n      - Materia\n    definitions:\n      GrupoMateria:\n        type: object\n        properties:\n          id_grup_mat:",
         "detail": "app.routes.materia",
         "documentation": {}
     },
@@ -791,7 +791,7 @@
         "kind": 5,
         "importPath": "app.routes.materia",
         "description": "app.routes.materia",
-        "peekOfCode": "materias = Blueprint(\"materias\",__name__)\n#Retorna all materias\n@materias.route(\"/materia\" , methods=[\"GET\"])\n@cross_origin()\ndef getAllMateria():\n    try:\n        all_materia = Materia.query.all()\n        return materias_schema.dump(all_materia), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Materias not found\", status.HTTP_401_UNAUTHORIZED",
+        "peekOfCode": "materias = Blueprint(\"materias\",__name__)\n#Retorna all materias\n@materias.route(\"/materia\" , methods=[\"GET\"])\n@cross_origin()\ndef getAllMateria():\n    \"\"\"Returning list all Materias\n    ---\n    tags:\n      - Materia\n    definitions:",
         "detail": "app.routes.materia",
         "documentation": {}
     },
@@ -800,7 +800,7 @@
         "kind": 2,
         "importPath": "app.routes.salon",
         "description": "app.routes.salon",
-        "peekOfCode": "def getAllSalones():\n    try:\n        all_salones = Salon.query.all()\n        return salones_schema.dump(all_salones), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Salones not found\", status.HTTP_401_UNAUTHORIZED\n##Encontrar un salón\n@salones.route(\"/salon/<string:id_salon>\", methods=[\"GET\"])\n@cross_origin()\ndef encontrarSalon(id_salon):",
+        "peekOfCode": "def getAllSalones():\n    \"\"\"Retorna todos los salones\n    ---\n    tags:\n      - Salon\n    definitions:\n      Salon:\n        type: object\n        properties:\n          id_salon:",
         "detail": "app.routes.salon",
         "documentation": {}
     },
@@ -809,7 +809,7 @@
         "kind": 2,
         "importPath": "app.routes.salon",
         "description": "app.routes.salon",
-        "peekOfCode": "def encontrarSalon(id_salon):\n    try:\n        salonFound = Salon.query.filter(Salon.id_salon == id_salon).one()\n    except NoResultFound:\n        return \"Salon not found\", status.HTTP_401_UNAUTHORIZED\n    return salon_schema.dump(salonFound), status.HTTP_200_OK\n##Editar el estado de un determinado salón \n# @salones.route(\"/salon/<string:salon>\", methods=[\"PUT\"])\n# @cross_origin()\n# def editarEstadoSalon():",
+        "peekOfCode": "def encontrarSalon(id_salon):\n    \"\"\"Retorna la información del salón a encontrar\n      ---\n      tags:\n        - Salon\n      parameters:\n        - name: id_salon\n          in: path\n          type: string\n          required: true",
         "detail": "app.routes.salon",
         "documentation": {}
     },
@@ -818,7 +818,7 @@
         "kind": 5,
         "importPath": "app.routes.salon",
         "description": "app.routes.salon",
-        "peekOfCode": "salones = Blueprint(\"salones\",__name__)\n##Returns all salones\n@salones.route(\"/salon\" , methods=[\"GET\"])\n@cross_origin()\ndef getAllSalones():\n    try:\n        all_salones = Salon.query.all()\n        return salones_schema.dump(all_salones), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Salones not found\", status.HTTP_401_UNAUTHORIZED",
+        "peekOfCode": "salones = Blueprint(\"salones\",__name__)\n@salones.route(\"/salon\" , methods=[\"GET\"])\n@cross_origin()\ndef getAllSalones():\n    \"\"\"Retorna todos los salones\n    ---\n    tags:\n      - Salon\n    definitions:\n      Salon:",
         "detail": "app.routes.salon",
         "documentation": {}
     },

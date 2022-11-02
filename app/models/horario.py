@@ -7,7 +7,7 @@ from ..config.ma import ma
 
 class Horario(db.Model):
     __tablename__ = 'horario'
-    id_horario = db.Column(db.String(1), primary_key=True)
+    id_horario = db.Column(db.Integer, primary_key=True)
     hora_inicio = db.Column(DateTime(timezone=True),server_default=func.now(),nullable=False)
     hora_final = db.Column(DateTime(timezone=True),server_default=func.now(),nullable=False)
     detalle_horario: db.relationship('DetalleHorario', back_populates="horarioRel")

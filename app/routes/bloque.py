@@ -13,6 +13,26 @@ bloques = Blueprint("bloques",__name__)
 @bloques.route("/bloque" , methods=["GET"])
 @cross_origin()
 def getAllBloques():
+    """Returning list all Bloques
+    ---
+    tags:
+      - Bloque
+    definitions:
+      Bloque:
+        type: object
+        properties:
+          id_edificio:
+            type: string
+          nombre:
+            type: string
+          piso:
+            type: integer
+    responses:
+      200:
+        description: A list of Bloques
+        schema:
+          $ref: '#/definitions/Bloque'
+    """
     try:
         all_bloque = Bloque.query.all()
         return bloques_schema.dump(all_bloque), status.HTTP_200_OK

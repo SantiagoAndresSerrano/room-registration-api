@@ -12,6 +12,28 @@ horarios = Blueprint("horarios",__name__)
 @horarios.route("/horario" , methods=["GET"])
 @cross_origin()
 def getAllHorarios():
+    """Returning list all horario
+    ---
+    tags:
+      - Horario
+    definitions:
+      Horario:
+        type: object
+        properties:
+          id_horario:
+            type: integer
+          hora_inicio:
+            type: string
+            format: date-time
+          hora_final:
+            type: string
+            format: date-time
+    responses:
+      200:
+        description: A list of Horario
+        schema:
+          $ref: '#/definitions/Horario'
+    """
     try:
         all_horarios = Horario.query.all()
         return horarios_schema.dump(all_horarios), status.HTTP_200_OK
@@ -22,6 +44,34 @@ def getAllHorarios():
 @horarios.route("/horario/<string:id_horario>", methods=["GET"])
 @cross_origin()
 def encontrarHorario(id_horario):
+    """Returning A Horario
+    ---
+    tags:
+      - Horario
+    parameters:
+      - name: id_horario
+        in: path
+        type: integer
+        required: true
+        description: Identifier horario
+    definitions:
+      Horario:
+        type: object
+        properties:
+          id_horario:
+            type: integer
+          hora_inicio:
+            type: string
+            format: date-time
+          hora_final:
+            type: string
+            format: date-time
+    responses:
+      200:
+        description: A Horario
+        schema:
+          $ref: '#/definitions/Horario'
+    """
     try:
         horarioFound = Horario.query.filter(Horario.id_horario == id_horario).one()
     except NoResultFound:

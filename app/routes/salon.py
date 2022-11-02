@@ -8,10 +8,41 @@ from flask_cors import cross_origin
 
 salones = Blueprint("salones",__name__)
 
-##Returns all salones
 @salones.route("/salon" , methods=["GET"])
 @cross_origin()
 def getAllSalones():
+    """Retorna todos los salones
+    ---
+    tags:
+      - Salon
+    definitions:
+      Salon:
+        type: object
+        properties:
+          id_salon:
+            type: string
+          tipo:
+            type: integer
+          estado:
+            type: integer
+          cupo:
+            type: integer
+          BloqueRel:
+            type: object
+            properties:
+              id_edificio:
+                type: string
+              nombre:
+                type: string
+              piso:
+                type: integer
+          
+    responses:
+      200:
+        description: A list of rooms
+        schema:
+          $ref: '#/definitions/Salon'
+    """
     try:
         all_salones = Salon.query.all()
         return salones_schema.dump(all_salones), status.HTTP_200_OK
@@ -22,6 +53,44 @@ def getAllSalones():
 @salones.route("/salon/<string:id_salon>", methods=["GET"])
 @cross_origin()
 def encontrarSalon(id_salon):
+    """Retorna la información del salón a encontrar
+      ---
+      tags:
+        - Salon
+      parameters:
+        - name: id_salon
+          in: path
+          type: string
+          required: true
+          description: Identifier salon
+      definitions:
+        Salon:
+          type: object
+          properties:
+            id_salon:
+              type: string
+            tipo:
+              type: integer
+            estado:
+              type: integer
+            cupo:
+              type: integer
+            BloqueRel:
+              type: object
+              properties:
+                id_edificio:
+                  type: string
+                nombre:
+                  type: string
+                piso:
+                  type: integer
+            
+      responses:
+        200:
+          description: A room class
+          schema:
+            $ref: '#/definitions/Salon'
+      """
     try:
         salonFound = Salon.query.filter(Salon.id_salon == id_salon).one()
     except NoResultFound:
