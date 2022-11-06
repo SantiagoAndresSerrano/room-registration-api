@@ -8,7 +8,7 @@ class TipoInventario(db.Model):
     __tablename__ = 'tipo_inventario'
     id_tipo = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(50), nullable=False)
-    descripcion = db.Column(db.String, nullable=False)
+    descripcion = db.Column(db.String(250), nullable=False)
     detalles = 'detalle_inventario',db.relationship('DetalleInventario', back_populates="tipo_inventario")
      
     def __repr__(self):

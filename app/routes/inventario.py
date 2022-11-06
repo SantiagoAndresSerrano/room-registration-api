@@ -13,9 +13,55 @@ inventario = Blueprint("inventario",__name__)
 
     
 #Retorna todos los detalles de los inventarios
-@inventario.route("/inventario/detalleinventario/", methods=["GET"])
+@inventario.route("/salon/inventario/detalleinventario/", methods=["GET"])
 @cross_origin()
 def getDetalleinventario():
+    """Retorna el detalle de todos los elementos de un salón
+    ---
+    tags:
+      - Salon
+    definitions:
+        DetalleInventario:
+          type: object
+          properties:
+              id_detalle:
+                type: integer
+              tipoRel:
+                type: object
+                properties:
+                    id_tipo: 
+                        type: integer
+                    nombre: 
+                        type: string
+                    descripcion: 
+                        type: string
+              salonRel:
+                type: object
+                properties:
+                  id_salon:
+                    type: string
+                  tipo:
+                    type: integer
+                  estado:
+                    type: integer
+                  cupo:
+                    type: integer
+                  BloqueRel:
+                    type: object
+                    properties:
+                      id_edificio:
+                        type: string
+                      nombre:
+                        type: string
+                      piso:
+                        type: integer
+
+    responses:
+      200:
+        description: Lista de detalle en el inventario del salón
+        schema:
+          $ref: '#/definitions/DetalleInventario'
+    """
     try:
         allDetalles = DetalleInventario.query.all()
         return detallesInven_schema.dump(allDetalles), status.HTTP_200_OK
@@ -23,9 +69,30 @@ def getDetalleinventario():
         return "Detalles inventario not found", status.HTTP_401_UNAUTHORIZED
 
 ##Returns all tipos de elementos de un salón
-@inventario.route("/inventario/tipos" , methods=["GET"])
+@inventario.route("/salon/inventario/tipos/" , methods=["GET"])
 @cross_origin()
 def getAllTipoInventario():
+    """Retorna una lista de tipos de elementos en un salón
+    ---
+    tags:
+      - Salon
+    definitions:
+        Tipo:
+          type: object
+          properties:
+            id_tipo: 
+                type: integer
+            nombre: 
+                type: string
+            descripcion: 
+                type: string
+              
+    responses:
+      200:
+        description: Lista de tipos de elementos del salón
+        schema:
+          $ref: '#/definitions/Tipo'
+    """
     try:
         all_tipos = TipoInventario.query.all()
         return tiposInven_schema.dump(all_tipos), status.HTTP_200_OK

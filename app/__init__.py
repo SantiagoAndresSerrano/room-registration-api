@@ -79,12 +79,5 @@ def create_app(test_config=None):
     except OSError:
         pass
     
-# #getAll
-#     @app.route("/api/detallehorario/")
-#     def getDetalleHorario():
-#         all = DetalleHorario.query.all()
-#         return dets_horario_schema.jsonify(all)
-
-
     return app
 
