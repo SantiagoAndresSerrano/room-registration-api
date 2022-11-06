@@ -1,4 +1,5 @@
 from app import create_app
+import flask
 import py_eureka_client.eureka_client as eureka_client
 
 eureka_client.init(eureka_server="https://eureka-service-ufps.herokuapp.com/eureka",

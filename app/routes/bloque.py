@@ -26,7 +26,7 @@ def getAllBloques():
           nombre:
             type: string
           piso:
-            type: integer
+            type: integer 
     responses:
       200:
         description: A list of Bloques
