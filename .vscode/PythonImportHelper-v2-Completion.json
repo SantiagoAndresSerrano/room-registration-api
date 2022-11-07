@@ -674,7 +674,7 @@
         "kind": 6,
         "importPath": "app.models.tipo_inventario",
         "description": "app.models.tipo_inventario",
-        "peekOfCode": "class TipoInventario(db.Model): \n    __tablename__ = 'tipo_inventario'\n    id_tipo = db.Column(db.Integer, primary_key=True)\n    nombre = db.Column(db.String(50), nullable=False)\n    descripcion = db.Column(db.String, nullable=False)\n    detalles = 'detalle_inventario',db.relationship('DetalleInventario', back_populates=\"tipo_inventario\")\n    def __repr__(self):\n        return '<TipoInventario %r>' % self.id_tipo % self.nombre %self.descripcion\nclass TipoInventarioSchema(ma.Schema):\n    class Meta:",
+        "peekOfCode": "class TipoInventario(db.Model): \n    __tablename__ = 'tipo_inventario'\n    id_tipo = db.Column(db.Integer, primary_key=True)\n    nombre = db.Column(db.String(50), nullable=False)\n    descripcion = db.Column(db.String(250), nullable=False)\n    detalles = 'detalle_inventario',db.relationship('DetalleInventario', back_populates=\"tipo_inventario\")\n    def __repr__(self):\n        return '<TipoInventario %r>' % self.id_tipo % self.nombre %self.descripcion\nclass TipoInventarioSchema(ma.Schema):\n    class Meta:",
         "detail": "app.models.tipo_inventario",
         "documentation": {}
     },
@@ -755,7 +755,7 @@
         "kind": 2,
         "importPath": "app.routes.inventario",
         "description": "app.routes.inventario",
-        "peekOfCode": "def getDetalleinventario():\n    try:\n        allDetalles = DetalleInventario.query.all()\n        return detallesInven_schema.dump(allDetalles), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Detalles inventario not found\", status.HTTP_401_UNAUTHORIZED\n##Returns all tipos de elementos de un salón\n@inventario.route(\"/inventario/tipos\" , methods=[\"GET\"])\n@cross_origin()\ndef getAllTipoInventario():",
+        "peekOfCode": "def getDetalleinventario():\n    \"\"\"Retorna el detalle de todos los elementos de un salón\n    ---\n    tags:\n      - Salon\n    definitions:\n        DetalleInventario:\n          type: object\n          properties:\n              id_detalle:",
         "detail": "app.routes.inventario",
         "documentation": {}
     },
@@ -764,7 +764,7 @@
         "kind": 2,
         "importPath": "app.routes.inventario",
         "description": "app.routes.inventario",
-        "peekOfCode": "def getAllTipoInventario():\n    try:\n        all_tipos = TipoInventario.query.all()\n        return tiposInven_schema.dump(all_tipos), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Tipo de inventario not found\", status.HTTP_401_UNAUTHORIZED\n##Retorna los elementos de un determinado salón\n##Editar el estado de un determinado elemento de un salón",
+        "peekOfCode": "def getAllTipoInventario():\n    \"\"\"Retorna una lista de tipos de elementos en un salón\n    ---\n    tags:\n      - Salon\n    definitions:\n        Tipo:\n          type: object\n          properties:\n            id_tipo: ",
         "detail": "app.routes.inventario",
         "documentation": {}
     },
@@ -773,7 +773,7 @@
         "kind": 5,
         "importPath": "app.routes.inventario",
         "description": "app.routes.inventario",
-        "peekOfCode": "inventario = Blueprint(\"inventario\",__name__)\n#Retorna todos los detalles de los inventarios\n@inventario.route(\"/inventario/detalleinventario/\", methods=[\"GET\"])\n@cross_origin()\ndef getDetalleinventario():\n    try:\n        allDetalles = DetalleInventario.query.all()\n        return detallesInven_schema.dump(allDetalles), status.HTTP_200_OK\n    except NoResultFound:\n        return \"Detalles inventario not found\", status.HTTP_401_UNAUTHORIZED",
+        "peekOfCode": "inventario = Blueprint(\"inventario\",__name__)\n#Retorna todos los detalles de los inventarios\n@inventario.route(\"/salon/inventario/detalleinventario/\", methods=[\"GET\"])\n@cross_origin()\ndef getDetalleinventario():\n    \"\"\"Retorna el detalle de todos los elementos de un salón\n    ---\n    tags:\n      - Salon\n    definitions:",
         "detail": "app.routes.inventario",
         "documentation": {}
     },

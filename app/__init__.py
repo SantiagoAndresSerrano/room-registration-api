@@ -15,7 +15,6 @@ from .routes.bloque import bloques
 from .routes.salon import salones
 from .routes.horario import horarios
 
-# host = os.environ.get('SITE_HOST', 'http://127.0.0.1:5000')
 
 def create_app(test_config=None):
     swagger_template = {
@@ -25,7 +24,7 @@ def create_app(test_config=None):
             'description': 'This document contains the list of API services '
                            'with Python.',
         },
-        "host": "127.0.0.1:5000",
+        "host": "room-registration-microservice.herokuapp.com",
         "securityDefinitions": {
             "Bearer": {
                 "type": "apiKey",
