@@ -9,7 +9,7 @@ from flask_cors import cross_origin
 horarios = Blueprint("horarios",__name__)
 
 ##Retorna todos los horarios
-@horarios.route("/horario" , methods=["GET"])
+@horarios.route("/roomregister/horario" , methods=["GET"])
 @cross_origin()
 def getAllHorarios():
     """Returning list all horario
