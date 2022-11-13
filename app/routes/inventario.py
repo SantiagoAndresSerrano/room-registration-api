@@ -69,7 +69,7 @@ def getDetalleinventario():
         return "Detalles inventario not found", status.HTTP_401_UNAUTHORIZED
 
 ##Returns all tipos de elementos de un salón
-@inventario.route("/salon/inventario/tipos/" , methods=["GET"])
+@inventario.route("/roomregister/salon/inventario/tipos/" , methods=["GET"])
 @cross_origin()
 def getAllTipoInventario():
     """Retorna una lista de tipos de elementos en un salón
