@@ -13,7 +13,7 @@ inventario = Blueprint("inventario",__name__)
 
     
 #Retorna todos los detalles de los inventarios
-@inventario.route("/salon/inventario/detalleinventario/", methods=["GET"])
+@inventario.route("/roomregister/salon/inventario/detalleinventario/", methods=["GET"])
 @cross_origin()
 def getDetalleinventario():
     """Retorna el detalle de todos los elementos de un salón
