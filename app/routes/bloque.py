@@ -10,7 +10,7 @@ from flask_cors import cross_origin
 bloques = Blueprint("bloques",__name__)
 
 #Retorna all bloques
-@bloques.route("/bloque" , methods=["GET"])
+@bloques.route("/roomregister/bloque" , methods=["GET"])
 @cross_origin()
 def getAllBloques():
     """Returning list all Bloques
