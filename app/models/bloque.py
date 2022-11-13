@@ -5,7 +5,7 @@ from ..config.ma import ma
 
 class Bloque(db.Model):
     __tablename__ = 'bloque'
-    id_edificio = db.Column(db.String(25), primary_key=True)
+    id_edificio = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(255), nullable=False)
     piso = db.Column(db.Integer, nullable=False)
     salon = db.relationship('Salon')

@@ -275,6 +275,38 @@
         "documentation": {}
     },
     {
+        "label": "Salon",
+        "importPath": "app.models.salon",
+        "description": "app.models.salon",
+        "isExtraImport": true,
+        "detail": "app.models.salon",
+        "documentation": {}
+    },
+    {
+        "label": "salones_schema",
+        "importPath": "app.models.salon",
+        "description": "app.models.salon",
+        "isExtraImport": true,
+        "detail": "app.models.salon",
+        "documentation": {}
+    },
+    {
+        "label": "SalonSchema",
+        "importPath": "app.models.salon",
+        "description": "app.models.salon",
+        "isExtraImport": true,
+        "detail": "app.models.salon",
+        "documentation": {}
+    },
+    {
+        "label": "SalonSchema",
+        "importPath": "app.models.salon",
+        "description": "app.models.salon",
+        "isExtraImport": true,
+        "detail": "app.models.salon",
+        "documentation": {}
+    },
+    {
         "label": "NoResultFound",
         "importPath": "sqlalchemy.exc",
         "description": "sqlalchemy.exc",
@@ -379,14 +411,6 @@
         "documentation": {}
     },
     {
-        "label": "SalonSchema",
-        "importPath": "app.models.salon",
-        "description": "app.models.salon",
-        "isExtraImport": true,
-        "detail": "app.models.salon",
-        "documentation": {}
-    },
-    {
         "label": "re",
         "kind": 6,
         "isExtraImport": true,
@@ -444,7 +468,7 @@
         "kind": 6,
         "importPath": "app.models.bloque",
         "description": "app.models.bloque",
-        "peekOfCode": "class Bloque(db.Model):\n    __tablename__ = 'bloque'\n    id_edificio = db.Column(db.String(25), primary_key=True)\n    nombre = db.Column(db.String(255), nullable=False)\n    piso = db.Column(db.Integer, nullable=False)\n    salon = db.relationship('Salon')\n    def __repr__(self):\n        return '<Bloque %r>' % self.id_edificio % self.nombre %self.piso\nclass BloqueSchema(ma.Schema):\n    class Meta:",
+        "peekOfCode": "class Bloque(db.Model):\n    __tablename__ = 'bloque'\n    id_edificio = db.Column(db.Integer, primary_key=True)\n    nombre = db.Column(db.String(255), nullable=False)\n    piso = db.Column(db.Integer, nullable=False)\n    salon = db.relationship('Salon')\n    def __repr__(self):\n        return '<Bloque %r>' % self.id_edificio % self.nombre %self.piso\nclass BloqueSchema(ma.Schema):\n    class Meta:",
         "detail": "app.models.bloque",
         "documentation": {}
     },
@@ -624,7 +648,7 @@
         "kind": 6,
         "importPath": "app.models.horario",
         "description": "app.models.horario",
-        "peekOfCode": "class Horario(db.Model):\n    __tablename__ = 'horario'\n    id_horario = db.Column(db.Integer, primary_key=True)\n    hora_inicio = db.Column(DateTime(timezone=True),server_default=func.now(),nullable=False)\n    hora_final = db.Column(DateTime(timezone=True),server_default=func.now(),nullable=False)\n    detalle_horario= db.relationship('DetalleHorario', back_populates=\"horarioRel\",)\n    def __repr__(self):\n        return '<Horario %r>' % self.id_horario % self.hora_inicio & self.hora_Final\nclass HorarioSchema(ma.Schema):\n    class Meta:",
+        "peekOfCode": "class Horario(db.Model):\n    __tablename__ = 'horario'\n    id_horario = db.Column(db.Integer, primary_key=True)\n    dia = db.Column(db.String(25), nullable=False)\n    hora_inicio = db.Column(DateTime(timezone=False),server_default=func.now(),nullable=False)\n    hora_final = db.Column(DateTime(timezone=False),server_default=func.now(),nullable=False)\n    detalle_horario= db.relationship('DetalleHorario', back_populates=\"horarioRel\",)\n    def __repr__(self):\n        return '<Horario %r>' % self.id_horario % self.hora_inicio & self.hora_Final\nclass HorarioSchema(ma.Schema):",
         "detail": "app.models.horario",
         "documentation": {}
     },
@@ -633,7 +657,7 @@
         "kind": 6,
         "importPath": "app.models.horario",
         "description": "app.models.horario",
-        "peekOfCode": "class HorarioSchema(ma.Schema):\n    class Meta:\n        fields = ('id_horario', 'hora_inicio','hora_final')\nhorario_schema = HorarioSchema()\nhorarios_schema = HorarioSchema(many=True)",
+        "peekOfCode": "class HorarioSchema(ma.Schema):\n    class Meta:\n        fields = ('id_horario','dia', 'hora_inicio','hora_final')\nhorario_schema = HorarioSchema()\nhorarios_schema = HorarioSchema(many=True)",
         "detail": "app.models.horario",
         "documentation": {}
     },
@@ -696,7 +720,7 @@
         "kind": 6,
         "importPath": "app.models.salon",
         "description": "app.models.salon",
-        "peekOfCode": "class Salon(db.Model):\n    __tablename__ = 'salon'\n    id_salon = db.Column(db.String(10), primary_key=True)\n    tipo = db.Column(db.Integer, nullable=False)\n    estado = db.Column(db.Integer, nullable=False)\n    cupo = db.Column(db.Integer, nullable=False)\n    grupo_materia = db.Column(db.Integer, db.ForeignKey('grupo_materia.id_grup_mat'))\n    bloque = db.Column(db.String(25), db.ForeignKey('bloque.id_edificio'))\n    bloqueRel= db.relationship('Bloque', back_populates=\"salon\")\n    grupo_materiaRel=db.relationship('GrupoMateria', back_populates=\"salon\")",
+        "peekOfCode": "class Salon(db.Model):\n    __tablename__ = 'salon'\n    id_salon = db.Column(db.String(10), primary_key=True)\n    tipo = db.Column(db.Integer, nullable=False)\n    estado = db.Column(db.Integer, nullable=False)\n    cupo = db.Column(db.Integer, nullable=False)\n    grupo_materia = db.Column(db.Integer, db.ForeignKey('grupo_materia.id_grup_mat'))\n    bloque = db.Column(db.Integer, db.ForeignKey('bloque.id_edificio'))\n    bloqueRel= db.relationship('Bloque', back_populates=\"salon\")\n    grupo_materiaRel=db.relationship('GrupoMateria', back_populates=\"salon\")",
         "detail": "app.models.salon",
         "documentation": {}
     },
@@ -769,6 +793,15 @@
         "importPath": "app.routes.bloque",
         "description": "app.routes.bloque",
         "peekOfCode": "def getAllBloques():\n    \"\"\"Returning list all Bloques\n    ---\n    tags:\n      - Bloque\n    definitions:\n      Bloque:\n        type: object\n        properties:\n          id_edificio:",
+        "detail": "app.routes.bloque",
+        "documentation": {}
+    },
+    {
+        "label": "getAllSalonBloque",
+        "kind": 2,
+        "importPath": "app.routes.bloque",
+        "description": "app.routes.bloque",
+        "peekOfCode": "def getAllSalonBloque(id_bloque):\n    \"\"\"Returning list all room class by bloque\n    ---\n    tags:\n      - Bloque\n    parameters:\n      - name: id_edificio\n        in: path\n        type: integer\n        required: true",
         "detail": "app.routes.bloque",
         "documentation": {}
     },

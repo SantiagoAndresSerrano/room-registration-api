@@ -1,5 +1,6 @@
 from flask import Blueprint, request
 from flask_api import status
+from app.models.salon import Salon, salones_schema, SalonSchema
 from ..models.bloque import Bloque
 from ..models.bloque import bloque_schema, bloques_schema
 from ..config.db import db
@@ -22,7 +23,7 @@ def getAllBloques():
         type: object
         properties:
           id_edificio:
-            type: string
+            type: integer
           nombre:
             type: string
           piso:
@@ -38,3 +39,51 @@ def getAllBloques():
         return bloques_schema.dump(all_bloque), status.HTTP_200_OK
     except NoResultFound:
         return "Bloques not found", status.HTTP_401_UNAUTHORIZED
+      
+      #Retorna all bloques
+@bloques.route("/roomregister/bloque/<int:id_bloque>" , methods=["GET"])
+@cross_origin()
+def getAllSalonBloque(id_bloque):
+    """Returning list all room class by bloque
+    ---
+    tags:
+      - Bloque
+    parameters:
+      - name: id_edificio
+        in: path
+        type: integer
+        required: true
+        description: Identifier bloque, example (1)
+    definitions:
+      Salon:
+        type: object
+        properties:
+          id_salon:
+            type: string
+          tipo:
+            type: integer
+          estado:
+            type: integer
+          cupo:
+            type: integer
+          BloqueRel:
+            type: object
+            properties:
+              id_edificio:
+                type: string
+              nombre:
+                type: string
+              piso:
+                type: integer
+    responses:
+      200:
+        description: A list of rooms
+        schema:
+          $ref: '#/definitions/Salon'
+    """
+    try:
+        all_salon = Salon.query.filter(Salon.bloque == id_bloque)
+        salones1_schema = SalonSchema(many=True, only=('id_salon',))
+        return salones1_schema.dump(all_salon), status.HTTP_200_OK
+    except NoResultFound:
+        return "Salones not found", status.HTTP_401_UNAUTHORIZED

@@ -8,8 +8,9 @@ from ..config.ma import ma
 class Horario(db.Model):
     __tablename__ = 'horario'
     id_horario = db.Column(db.Integer, primary_key=True)
-    hora_inicio = db.Column(DateTime(timezone=True),server_default=func.now(),nullable=False)
-    hora_final = db.Column(DateTime(timezone=True),server_default=func.now(),nullable=False)
+    dia = db.Column(db.String(25), nullable=False)
+    hora_inicio = db.Column(DateTime(timezone=False),server_default=func.now(),nullable=False)
+    hora_final = db.Column(DateTime(timezone=False),server_default=func.now(),nullable=False)
     detalle_horario= db.relationship('DetalleHorario', back_populates="horarioRel",)
      
     def __repr__(self):
@@ -17,7 +18,7 @@ class Horario(db.Model):
 
 class HorarioSchema(ma.Schema):
     class Meta:
-        fields = ('id_horario', 'hora_inicio','hora_final')
+        fields = ('id_horario','dia', 'hora_inicio','hora_final')
 
 horario_schema = HorarioSchema()
 horarios_schema = HorarioSchema(many=True)
