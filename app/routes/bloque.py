@@ -79,7 +79,7 @@ def getAllSalonBloque(id_bloque):
       200:
         description: A list of rooms
         schema:
-          $ref: '#/definitions/Salon'
+          $ref: '#/definitions/Bloque'
     """
     try:
         all_salon = Salon.query.filter(Salon.bloque == id_bloque)
