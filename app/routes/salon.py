@@ -8,7 +8,7 @@ from flask_cors import cross_origin
 
 salones = Blueprint("salones",__name__)
 
-@salones.route("/salon" , methods=["GET"])
+@salones.route("/roomregister/salon" , methods=["GET"])
 @cross_origin()
 def getAllSalones():
     """Retorna todos los salones
@@ -50,7 +50,7 @@ def getAllSalones():
         return "Salones not found", status.HTTP_401_UNAUTHORIZED
 
 ##Encontrar un salón
-@salones.route("/salon/<string:id_salon>", methods=["GET"])
+@salones.route("/roomregister/salon/<string:id_salon>", methods=["GET"])
 @cross_origin()
 def encontrarSalon(id_salon):
     """Retorna la información del salón a encontrar
