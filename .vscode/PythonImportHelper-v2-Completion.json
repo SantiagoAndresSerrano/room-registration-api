@@ -1,5 +1,14 @@
 [
     {
+        "label": "flask_sqlalchemy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "flask_sqlalchemy",
+        "description": "flask_sqlalchemy",
+        "detail": "flask_sqlalchemy",
+        "documentation": {}
+    },
+    {
         "label": "SQLAlchemy",
         "importPath": "flask_sqlalchemy",
         "description": "flask_sqlalchemy",
@@ -88,7 +97,24 @@
         "documentation": {}
     },
     {
+        "label": "sqlalchemy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
         "label": "DateTime",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "and_",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -329,6 +355,38 @@
         "documentation": {}
     },
     {
+        "label": "det_horario_schema",
+        "importPath": "app.models.detalle_horario",
+        "description": "app.models.detalle_horario",
+        "isExtraImport": true,
+        "detail": "app.models.detalle_horario",
+        "documentation": {}
+    },
+    {
+        "label": "Horario",
+        "importPath": "app.models.horario",
+        "description": "app.models.horario",
+        "isExtraImport": true,
+        "detail": "app.models.horario",
+        "documentation": {}
+    },
+    {
+        "label": "GrupoMateria",
+        "importPath": "app.models.grupo_materia",
+        "description": "app.models.grupo_materia",
+        "isExtraImport": true,
+        "detail": "app.models.grupo_materia",
+        "documentation": {}
+    },
+    {
+        "label": "SalonSchema",
+        "importPath": "app.models.salon",
+        "description": "app.models.salon",
+        "isExtraImport": true,
+        "detail": "app.models.salon",
+        "documentation": {}
+    },
+    {
         "label": "re",
         "kind": 6,
         "isExtraImport": true,
@@ -422,7 +480,7 @@
         "kind": 6,
         "importPath": "app.models.detalle_horario",
         "description": "app.models.detalle_horario",
-        "peekOfCode": "class DetalleHorario(db.Model):\n    __tablename__ = 'detalle_horario'\n    id_det_hor = db.Column(db.Integer, primary_key=True)\n    horario = db.Column(db.Integer, db.ForeignKey('horario.id_horario'))\n    grupo_materia = db.Column(db.Integer, db.ForeignKey('grupo_materia.id_grup_mat'))\n    horarioRel: db.relationship('Horario', back_populates=\"detallle_horario\")\n    grupo_materiaRel: db.relationship('GrupoMateria', back_populates=\"detallle_horario\")\nclass DetalleHorarioSchema(ma.Schema):\n    class Meta:\n        fields = ('id_grup_mat','horarioRel', 'grupo_materiaRel')",
+        "peekOfCode": "class DetalleHorario(db.Model):\n    __tablename__ = 'detalle_horario'\n    id_det_hor = db.Column(db.Integer, primary_key=True)\n    horario = db.Column(db.Integer, db.ForeignKey('horario.id_horario'))\n    grupo_materia = db.Column(db.Integer, db.ForeignKey('grupo_materia.id_grup_mat'))\n    horarioRel = db.relationship('Horario', back_populates=\"detalle_horario\",)\n    grupo_materiaRel = db.relationship('GrupoMateria', back_populates=\"detalle_horario\")\nclass DetalleHorarioSchema(ma.Schema):\n    class Meta:\n        fields = ('id_grup_mat','horarioRel', 'grupo_materiaRel')",
         "detail": "app.models.detalle_horario",
         "documentation": {}
     },
@@ -530,7 +588,7 @@
         "kind": 6,
         "importPath": "app.models.grupo_materia",
         "description": "app.models.grupo_materia",
-        "peekOfCode": "class GrupoMateria(db.Model):\n    __tablename__ = 'grupo_materia'\n    id_grup_mat = db.Column(db.Integer, primary_key=True)\n    periodo = db.Column(db.String(25), nullable=False)\n    cupos = db.Column(db.Integer, nullable=False)\n    grupo = db.Column(db.String(1), db.ForeignKey('grupo.id_grupo'))\n    materia = db.Column(db.Integer, db.ForeignKey('materia.id_materia'))\n    grupoRel= db.relationship('Grupo', back_populates=\"grupo_materia\")\n    materiaRel= db.relationship('Materia')\n    detalle_horario:db.relationship('DetalleHorario', back_populates=\"grupo_materiaRel\")",
+        "peekOfCode": "class GrupoMateria(db.Model):\n    __tablename__ = 'grupo_materia'\n    id_grup_mat = db.Column(db.Integer, primary_key=True)\n    periodo = db.Column(db.String(25), nullable=False)\n    cupos = db.Column(db.Integer, nullable=False)\n    grupo = db.Column(db.String(1), db.ForeignKey('grupo.id_grupo'))\n    materia = db.Column(db.Integer, db.ForeignKey('materia.id_materia'))\n    grupoRel= db.relationship('Grupo', back_populates=\"grupo_materia\")\n    materiaRel= db.relationship('Materia')\n    detalle_horario=db.relationship('DetalleHorario', back_populates=\"grupo_materiaRel\")",
         "detail": "app.models.grupo_materia",
         "documentation": {}
     },
@@ -566,7 +624,7 @@
         "kind": 6,
         "importPath": "app.models.horario",
         "description": "app.models.horario",
-        "peekOfCode": "class Horario(db.Model):\n    __tablename__ = 'horario'\n    id_horario = db.Column(db.Integer, primary_key=True)\n    hora_inicio = db.Column(DateTime(timezone=True),server_default=func.now(),nullable=False)\n    hora_final = db.Column(DateTime(timezone=True),server_default=func.now(),nullable=False)\n    detalle_horario: db.relationship('DetalleHorario', back_populates=\"horarioRel\")\n    def __repr__(self):\n        return '<Horario %r>' % self.id_horario % self.hora_inicio & self.hora_Final\nclass HorarioSchema(ma.Schema):\n    class Meta:",
+        "peekOfCode": "class Horario(db.Model):\n    __tablename__ = 'horario'\n    id_horario = db.Column(db.Integer, primary_key=True)\n    hora_inicio = db.Column(DateTime(timezone=True),server_default=func.now(),nullable=False)\n    hora_final = db.Column(DateTime(timezone=True),server_default=func.now(),nullable=False)\n    detalle_horario= db.relationship('DetalleHorario', back_populates=\"horarioRel\",)\n    def __repr__(self):\n        return '<Horario %r>' % self.id_horario % self.hora_inicio & self.hora_Final\nclass HorarioSchema(ma.Schema):\n    class Meta:",
         "detail": "app.models.horario",
         "documentation": {}
     },
@@ -638,7 +696,7 @@
         "kind": 6,
         "importPath": "app.models.salon",
         "description": "app.models.salon",
-        "peekOfCode": "class Salon(db.Model):\n    __tablename__ = 'salon'\n    id_salon = db.Column(db.String(10), primary_key=True)\n    tipo = db.Column(db.Integer, nullable=False)\n    estado = db.Column(db.Integer, nullable=False)\n    cupo = db.Column(db.Integer, nullable=False)\n    grupo_materia = db.Column(db.Integer, db.ForeignKey('grupo_materia.id_grup_mat'))\n    bloque = db.Column(db.String(25), db.ForeignKey('bloque.id_edificio'))\n    bloqueRel= db.relationship('Bloque', back_populates=\"salon\")\n    grupo_materiaRel: db.relationship('GrupoMateria', back_populates=\"salonRel\")",
+        "peekOfCode": "class Salon(db.Model):\n    __tablename__ = 'salon'\n    id_salon = db.Column(db.String(10), primary_key=True)\n    tipo = db.Column(db.Integer, nullable=False)\n    estado = db.Column(db.Integer, nullable=False)\n    cupo = db.Column(db.Integer, nullable=False)\n    grupo_materia = db.Column(db.Integer, db.ForeignKey('grupo_materia.id_grup_mat'))\n    bloque = db.Column(db.String(25), db.ForeignKey('bloque.id_edificio'))\n    bloqueRel= db.relationship('Bloque', back_populates=\"salon\")\n    grupo_materiaRel=db.relationship('GrupoMateria', back_populates=\"salon\")",
         "detail": "app.models.salon",
         "documentation": {}
     },
@@ -719,7 +777,7 @@
         "kind": 5,
         "importPath": "app.routes.bloque",
         "description": "app.routes.bloque",
-        "peekOfCode": "bloques = Blueprint(\"bloques\",__name__)\n#Retorna all bloques\n@bloques.route(\"/bloque\" , methods=[\"GET\"])\n@cross_origin()\ndef getAllBloques():\n    \"\"\"Returning list all Bloques\n    ---\n    tags:\n      - Bloque\n    definitions:",
+        "peekOfCode": "bloques = Blueprint(\"bloques\",__name__)\n#Retorna all bloques\n@bloques.route(\"/roomregister/bloque\" , methods=[\"GET\"])\n@cross_origin()\ndef getAllBloques():\n    \"\"\"Returning list all Bloques\n    ---\n    tags:\n      - Bloque\n    definitions:",
         "detail": "app.routes.bloque",
         "documentation": {}
     },
@@ -742,11 +800,20 @@
         "documentation": {}
     },
     {
+        "label": "getAllDetailHorarios",
+        "kind": 2,
+        "importPath": "app.routes.horario",
+        "description": "app.routes.horario",
+        "peekOfCode": "def getAllDetailHorarios():\n    \"\"\"Returning list details all horario\n    ---\n    tags:\n      - Horario\n    definitions:\n      Horario:\n        type: object\n        properties:\n          id_horario:",
+        "detail": "app.routes.horario",
+        "documentation": {}
+    },
+    {
         "label": "horarios",
         "kind": 5,
         "importPath": "app.routes.horario",
         "description": "app.routes.horario",
-        "peekOfCode": "horarios = Blueprint(\"horarios\",__name__)\n##Retorna todos los horarios\n@horarios.route(\"/horario\" , methods=[\"GET\"])\n@cross_origin()\ndef getAllHorarios():\n    \"\"\"Returning list all horario\n    ---\n    tags:\n      - Horario\n    definitions:",
+        "peekOfCode": "horarios = Blueprint(\"horarios\",__name__)\n##Retorna todos los horarios\n@horarios.route(\"/roomregister/horario\" , methods=[\"GET\"])\n@cross_origin()\ndef getAllHorarios():\n    \"\"\"Returning list all horario\n    ---\n    tags:\n      - Horario\n    definitions:",
         "detail": "app.routes.horario",
         "documentation": {}
     },
@@ -773,7 +840,7 @@
         "kind": 5,
         "importPath": "app.routes.inventario",
         "description": "app.routes.inventario",
-        "peekOfCode": "inventario = Blueprint(\"inventario\",__name__)\n#Retorna todos los detalles de los inventarios\n@inventario.route(\"/salon/inventario/detalleinventario/\", methods=[\"GET\"])\n@cross_origin()\ndef getDetalleinventario():\n    \"\"\"Retorna el detalle de todos los elementos de un salón\n    ---\n    tags:\n      - Salon\n    definitions:",
+        "peekOfCode": "inventario = Blueprint(\"inventario\",__name__)\n#Retorna todos los detalles de los inventarios\n@inventario.route(\"/roomregister/salon/inventario/detalleinventario/\", methods=[\"GET\"])\n@cross_origin()\ndef getDetalleinventario():\n    \"\"\"Retorna el detalle de todos los elementos de un salón\n    ---\n    tags:\n      - Salon\n    definitions:",
         "detail": "app.routes.inventario",
         "documentation": {}
     },
@@ -800,7 +867,7 @@
         "kind": 5,
         "importPath": "app.routes.materia",
         "description": "app.routes.materia",
-        "peekOfCode": "materias = Blueprint(\"materias\",__name__)\n#Retorna all materias\n@materias.route(\"/materia\" , methods=[\"GET\"])\n@cross_origin()\ndef getAllMateria():\n    \"\"\"Returning list all Materias\n    ---\n    tags:\n      - Materia\n    definitions:",
+        "peekOfCode": "materias = Blueprint(\"materias\",__name__)\n#Retorna all materias\n@materias.route(\"/roomregister/materia\" , methods=[\"GET\"])\n@cross_origin()\ndef getAllMateria():\n    \"\"\"Returning list all Materias\n    ---\n    tags:\n      - Materia\n    definitions:",
         "detail": "app.routes.materia",
         "documentation": {}
     },
@@ -823,11 +890,20 @@
         "documentation": {}
     },
     {
+        "label": "consultarSalon",
+        "kind": 2,
+        "importPath": "app.routes.salon",
+        "description": "app.routes.salon",
+        "peekOfCode": "def consultarSalon(id_salon, fechaInicio, fechaFin):\n    \"\"\"Retorna el estado de un salón en un horario determinado\n      ---\n      tags:\n        - Salon\n      parameters:\n        - name: id_salon\n          in: path\n          type: string\n          required: true",
+        "detail": "app.routes.salon",
+        "documentation": {}
+    },
+    {
         "label": "salones",
         "kind": 5,
         "importPath": "app.routes.salon",
         "description": "app.routes.salon",
-        "peekOfCode": "salones = Blueprint(\"salones\",__name__)\n@salones.route(\"/salon\" , methods=[\"GET\"])\n@cross_origin()\ndef getAllSalones():\n    \"\"\"Retorna todos los salones\n    ---\n    tags:\n      - Salon\n    definitions:\n      Salon:",
+        "peekOfCode": "salones = Blueprint(\"salones\",__name__)\n@salones.route(\"/roomregister/salon\" , methods=[\"GET\"])\n@cross_origin()\ndef getAllSalones():\n    \"\"\"Retorna todos los salones\n    ---\n    tags:\n      - Salon\n    definitions:\n      Salon:",
         "detail": "app.routes.salon",
         "documentation": {}
     },

@@ -10,8 +10,8 @@ class DetalleHorario(db.Model):
     id_det_hor = db.Column(db.Integer, primary_key=True)
     horario = db.Column(db.Integer, db.ForeignKey('horario.id_horario'))
     grupo_materia = db.Column(db.Integer, db.ForeignKey('grupo_materia.id_grup_mat'))
-    horarioRel: db.relationship('Horario', back_populates="detallle_horario")
-    grupo_materiaRel: db.relationship('GrupoMateria', back_populates="detallle_horario")
+    horarioRel = db.relationship('Horario', back_populates="detalle_horario",)
+    grupo_materiaRel = db.relationship('GrupoMateria', back_populates="detalle_horario")
 
 class DetalleHorarioSchema(ma.Schema):
     class Meta:

@@ -15,8 +15,8 @@ class Salon(db.Model):
     grupo_materia = db.Column(db.Integer, db.ForeignKey('grupo_materia.id_grup_mat'))
     bloque = db.Column(db.String(25), db.ForeignKey('bloque.id_edificio'))
     bloqueRel= db.relationship('Bloque', back_populates="salon")
-    grupo_materiaRel: db.relationship('GrupoMateria', back_populates="salonRel")
-    detalle_inventario: db.relationship('DetalleInventario', back_populates="salonRel")
+    grupo_materiaRel=db.relationship('GrupoMateria', back_populates="salon")
+    detalle_inventario=db.relationship('DetalleInventario')
 
     def __repr__(self):
         return '<Salon %r>' % self.id_salon % self.tipo %self.estado

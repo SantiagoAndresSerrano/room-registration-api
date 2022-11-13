@@ -24,7 +24,8 @@ def create_app(test_config=None):
             'description': 'This document contains the list of API services '
                            'with Python.',
         },
-        "host": "room-registration-microservice.herokuapp.com",
+        # "host": "127.0.0.1:5000/",
+          "host":"room-registration-microservice.herokuapp.com",
         "securityDefinitions": {
             "Bearer": {
                 "type": "apiKey",

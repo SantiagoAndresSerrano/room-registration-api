@@ -10,7 +10,7 @@ class Horario(db.Model):
     id_horario = db.Column(db.Integer, primary_key=True)
     hora_inicio = db.Column(DateTime(timezone=True),server_default=func.now(),nullable=False)
     hora_final = db.Column(DateTime(timezone=True),server_default=func.now(),nullable=False)
-    detalle_horario: db.relationship('DetalleHorario', back_populates="horarioRel")
+    detalle_horario= db.relationship('DetalleHorario', back_populates="horarioRel",)
      
     def __repr__(self):
         return '<Horario %r>' % self.id_horario % self.hora_inicio & self.hora_Final

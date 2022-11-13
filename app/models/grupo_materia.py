@@ -3,8 +3,6 @@ from ..models.grupo import GrupoSchema
 from ..models.materia import MateriaSchema
 from ..config.db import db
 from ..config.ma import ma
-
-
 class GrupoMateria(db.Model):
     __tablename__ = 'grupo_materia'
     id_grup_mat = db.Column(db.Integer, primary_key=True)
@@ -14,8 +12,8 @@ class GrupoMateria(db.Model):
     materia = db.Column(db.Integer, db.ForeignKey('materia.id_materia'))
     grupoRel= db.relationship('Grupo', back_populates="grupo_materia")
     materiaRel= db.relationship('Materia')
-    detalle_horario:db.relationship('DetalleHorario', back_populates="grupo_materiaRel")
-    salon:db.relationship('Salon', back_populates="grupo_materia")
+    detalle_horario=db.relationship('DetalleHorario', back_populates="grupo_materiaRel")
+    salon=db.relationship('Salon')
 
 class GrupoMateriaSchema(ma.Schema):
     class Meta:
