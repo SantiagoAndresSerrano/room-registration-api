@@ -116,40 +116,27 @@ def consultarSalon(id_salon, fechaInicio, fechaFin):
           in: path
           type: string
           required: true
-          description: Identifier salon
+          description: Identifier salon, example (SA401)
         - name: fecha inicial
           in: path
           type: string
           format: date-time
           required: true
-          description: Identifier fecha inicial
+          description: Identifier fecha inicial, example (2022-08-15 10:10:00)
         - name: fecha final
           in: path
           type: string
           format: date-time
           required: true
-          description: Identifier fecha final
+          description: Identifier fecha final, example (2022-08-15 12:10:00)
       definitions:
         Salon:
           type: object
           properties:
             id_salon:
               type: string
-            tipo:
-              type: integer
             estado:
               type: integer
-            cupo:
-              type: integer
-            BloqueRel:
-              type: object
-              properties:
-                id_edificio:
-                  type: string
-                nombre:
-                  type: string
-                piso:
-                  type: integer
       responses:
         200:
           description: condition of a room class
