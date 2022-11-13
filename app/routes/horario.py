@@ -41,7 +41,7 @@ def getAllHorarios():
         return "Horarios not found", status.HTTP_401_UNAUTHORIZED
 
 ##Encontrar un horario
-@horarios.route("/horario/<string:id_horario>", methods=["GET"])
+@horarios.route("/roomregister/horario/<string:id_horario>", methods=["GET"])
 @cross_origin()
 def encontrarHorario(id_horario):
     """Returning A Horario
