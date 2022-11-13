@@ -801,7 +801,7 @@
         "kind": 2,
         "importPath": "app.routes.bloque",
         "description": "app.routes.bloque",
-        "peekOfCode": "def getAllSalonBloque(id_bloque):\n    \"\"\"Returning list all room class by bloque\n    ---\n    tags:\n      - Bloque\n    parameters:\n      - name: id_edificio\n        in: path\n        type: integer\n        required: true",
+        "peekOfCode": "def getAllSalonBloque(id_edificio):\n    \"\"\"Returning list all room class by bloque\n    ---\n    tags:\n      - Bloque\n    parameters:\n      - name: id_edificio\n        in: path\n        type: integer\n        required: true",
         "detail": "app.routes.bloque",
         "documentation": {}
     },

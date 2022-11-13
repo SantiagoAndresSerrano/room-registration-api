@@ -41,9 +41,9 @@ def getAllBloques():
         return "Bloques not found", status.HTTP_401_UNAUTHORIZED
       
       #Retorna all bloques
-@bloques.route("/roomregister/bloque/<int:id_bloque>" , methods=["GET"])
+@bloques.route("/roomregister/bloque/<int:id_edificio>" , methods=["GET"])
 @cross_origin()
-def getAllSalonBloque(id_bloque):
+def getAllSalonBloque(id_edificio):
     """Returning list all room class by bloque
     ---
     tags:
@@ -60,21 +60,6 @@ def getAllSalonBloque(id_bloque):
         properties:
           id_salon:
             type: string
-          tipo:
-            type: integer
-          estado:
-            type: integer
-          cupo:
-            type: integer
-          BloqueRel:
-            type: object
-            properties:
-              id_edificio:
-                type: string
-              nombre:
-                type: string
-              piso:
-                type: integer
     responses:
       200:
         description: A list of rooms
@@ -82,7 +67,7 @@ def getAllSalonBloque(id_bloque):
           $ref: '#/definitions/Bloque'
     """
     try:
-        all_salon = Salon.query.filter(Salon.bloque == id_bloque)
+        all_salon = Salon.query.filter(Salon.bloque == id_edificio)
         salones1_schema = SalonSchema(many=True, only=('id_salon',))
         return salones1_schema.dump(all_salon), status.HTTP_200_OK
     except NoResultFound:
