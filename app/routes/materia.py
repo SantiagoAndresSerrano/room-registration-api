@@ -11,7 +11,7 @@ from ..models.grupo_materia import GrupoMateria, grupo_materia_schema, grupos_ma
 materias = Blueprint("materias",__name__)
 
 #Retorna all materias
-@materias.route("/materia" , methods=["GET"])
+@materias.route("/roomregister/materia" , methods=["GET"])
 @cross_origin()
 def getAllMateria():
     """Returning list all Materias
@@ -38,7 +38,7 @@ def getAllMateria():
     except NoResultFound:
         return "Materias not found", status.HTTP_401_UNAUTHORIZED
     
-@materias.route("/materia/grupos", methods=["GET"])
+@materias.route("/roomregister/materia/grupos", methods=["GET"])
 @cross_origin()
 def getGrupoMateria():
     """Retorna todos los grupos de las materias existentes(Ej:115304-A)
