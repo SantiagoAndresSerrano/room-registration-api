@@ -128,7 +128,7 @@ def consultarSalon(id_salon, fechaInicio, fechaFin):
           type: string
           format: date-time
           required: true
-          description: Identifier fecha final, example (2022-08-15 12:10:00)
+          description: Identifier fecha final, example (2022-08-15 12:00:00)
       definitions:
         Salon:
           type: object

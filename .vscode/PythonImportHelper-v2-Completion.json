@@ -138,6 +138,14 @@
         "documentation": {}
     },
     {
+        "label": "and_",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
         "label": "func",
         "importPath": "sqlalchemy.sql",
         "description": "sqlalchemy.sql",
@@ -299,6 +307,14 @@
         "documentation": {}
     },
     {
+        "label": "Salon",
+        "importPath": "app.models.salon",
+        "description": "app.models.salon",
+        "isExtraImport": true,
+        "detail": "app.models.salon",
+        "documentation": {}
+    },
+    {
         "label": "SalonSchema",
         "importPath": "app.models.salon",
         "description": "app.models.salon",
@@ -395,11 +411,11 @@
         "documentation": {}
     },
     {
-        "label": "Horario",
-        "importPath": "app.models.horario",
-        "description": "app.models.horario",
+        "label": "GrupoMateria",
+        "importPath": "app.models.grupo_materia",
+        "description": "app.models.grupo_materia",
         "isExtraImport": true,
-        "detail": "app.models.horario",
+        "detail": "app.models.grupo_materia",
         "documentation": {}
     },
     {
@@ -408,6 +424,14 @@
         "description": "app.models.grupo_materia",
         "isExtraImport": true,
         "detail": "app.models.grupo_materia",
+        "documentation": {}
+    },
+    {
+        "label": "Horario",
+        "importPath": "app.models.horario",
+        "description": "app.models.horario",
+        "isExtraImport": true,
+        "detail": "app.models.horario",
         "documentation": {}
     },
     {
@@ -833,11 +857,20 @@
         "documentation": {}
     },
     {
-        "label": "getAllDetailHorarios",
+        "label": "getAllDetailsHorarios",
         "kind": 2,
         "importPath": "app.routes.horario",
         "description": "app.routes.horario",
-        "peekOfCode": "def getAllDetailHorarios():\n    \"\"\"Returning list details all horario\n    ---\n    tags:\n      - Horario\n    definitions:\n      Horario:\n        type: object\n        properties:\n          id_horario:",
+        "peekOfCode": "def getAllDetailsHorarios():\n    \"\"\"Returning list details all horario\n    ---\n    tags:\n      - Horario\n    definitions:\n      Horario:\n        type: object\n        properties:\n          id_horario:",
+        "detail": "app.routes.horario",
+        "documentation": {}
+    },
+    {
+        "label": "getAllDetailsHorariosBySalon",
+        "kind": 2,
+        "importPath": "app.routes.horario",
+        "description": "app.routes.horario",
+        "peekOfCode": "def getAllDetailsHorariosBySalon(id_salon):\n    \"\"\"Returning list details all horario by Salon\n    ---\n    tags:\n      - Horario\n    parameters:\n      - name: id_salon\n        in: path\n        type: string\n        required: true",
         "detail": "app.routes.horario",
         "documentation": {}
     },

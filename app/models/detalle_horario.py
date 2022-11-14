@@ -15,7 +15,7 @@ class DetalleHorario(db.Model):
 
 class DetalleHorarioSchema(ma.Schema):
     class Meta:
-        fields = ('id_grup_mat','horarioRel', 'grupo_materiaRel')
+        fields = ('id_det_hor','horarioRel', 'grupo_materiaRel')
     horarioRel = fields.Nested(HorarioSchema(only=('id_horario', 'hora_inicio','hora_final')))
     grupo_materiaRel = fields.Nested(GrupoMateriaSchema(only=('id_grup_mat','periodo', 'cupos', 'grupoRel', 'materiaRel')))
     
