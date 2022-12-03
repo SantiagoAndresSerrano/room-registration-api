@@ -8,6 +8,7 @@ class GrupoMateria(db.Model):
     id_grup_mat = db.Column(db.Integer, primary_key=True)
     periodo = db.Column(db.String(25), nullable=False)
     cupos = db.Column(db.Integer, nullable=False)
+    id_docente =  db.Column(db.String())
     grupo = db.Column(db.String(1), db.ForeignKey('grupo.id_grupo'))
     materia = db.Column(db.Integer, db.ForeignKey('materia.id_materia'))
     grupoRel= db.relationship('Grupo', back_populates="grupo_materia")
@@ -17,7 +18,7 @@ class GrupoMateria(db.Model):
 
 class GrupoMateriaSchema(ma.Schema):
     class Meta:
-        fields = ('id_grup_mat','periodo', 'cupos', 'grupoRel', 'materiaRel')
+        fields = ('id_grup_mat','periodo', 'cupos', 'id_docente','grupoRel', 'materiaRel')
     grupoRel = fields.Nested(GrupoSchema(only=('id_grupo', 'estado')))
     materiaRel = fields.Nested(MateriaSchema(only=('id_materia', 'nombre')))
     
