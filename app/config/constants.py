@@ -1,0 +1,1 @@
+DAYS_OF_WEEK= ["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"]

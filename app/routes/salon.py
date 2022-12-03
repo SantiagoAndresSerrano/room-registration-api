@@ -11,6 +11,7 @@ from ..config.db import db
 from sqlalchemy.exc import NoResultFound
 from flask_cors import cross_origin
 from sqlalchemy import and_
+from datetime import datetime 
 
 salones = Blueprint("salones",__name__)
 
@@ -144,11 +145,42 @@ def consultarSalon(id_salon, fechaInicio, fechaFin):
             $ref: '#/definitions/Salon'
       """
     try:
-        salonFound = Salon.query.join(GrupoMateria).join(DetalleHorario).filter(and_(Salon.id_salon== id_salon, GrupoMateria.id_grup_mat==Salon.grupo_materia, DetalleHorario.grupo_materia == GrupoMateria.id_grup_mat,fechaInicio == Horario.hora_inicio, fechaFin == Horario.hora_final)).one()
+        dia = datetime.strptime(fechaInicio, "%Y-%m-%dT%H:%M:%S")
+        print(dia.weekday())
+        salonFound = Salon.query.join(GrupoMateria).join(DetalleHorario).join(Horario).filter(and_(Salon.id_salon== id_salon, GrupoMateria.id_grup_mat==Salon.grupo_materia, DetalleHorario.grupo_materia == GrupoMateria.id_grup_mat, Horario.id_horario == DetalleHorario.id_det_hor,fechaInicio == Horario.hora_inicio, fechaFin == Horario.hora_final)).one()
         salon1_schema = SalonSchema(only=('id_salon','estado'))
     except NoResultFound:
-        return "Salon not found", status.HTTP_401_UNAUTHORIZED
+        return "no room with this schedule can be found", status.HTTP_401_UNAUTHORIZED
     return salon1_schema.dump(salonFound), status.HTTP_200_OK
+
+
+
+# @salones.route("/roomregister/salon/<string:id_salon>/reservar", methods=["POST"])
+# @cross_origin()
+# def ocuparSalon(id_salon):
+#     """Retorna la información del salón a encontrar
+#       ---
+#       tags:
+#         - Salon
+#       parameters:
+#         - name: id_salon
+#           in: path
+#           type: string
+#           required: true
+#           description: Identifier salon
+     
+#       responses:
+#         200:
+#           description: OK, room reserved 
+#           schema:
+#             $ref: '#/definitions/Salon'
+#       """
+#     try:
+#         salonFound = Salon.query.filter(Salon.id_salon == id_salon).one()
+#         setattr(salonFound, 'estado', '1')
+#     except NoResultFound:
+#         return "Salon not found", status.HTTP_401_UNAUTHORIZED
+#     return status.HTTP_200_OK
 
 ##Editar el estado de un determinado salón 
 # @salones.route("/salon/<string:salon>", methods=["PUT"])
