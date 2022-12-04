@@ -1,7 +1,7 @@
 from flask import Blueprint, request
 from flask_api import status
 
-from app.models.detalle_horario import det_horario_schema
+from app.models.detalle_horario import det_horario_schema, DetalleHorarioSchema
 from app.models.salon import Salon
 from app.models.grupo_materia import GrupoMateria
 from sqlalchemy import and_
@@ -11,6 +11,7 @@ from ..models.horario import horario_schema, horarios_schema
 from ..config.db import db
 from sqlalchemy.exc import NoResultFound
 from flask_cors import cross_origin
+from datetime import datetime 
 
 horarios = Blueprint("horarios",__name__)
 
@@ -161,3 +162,34 @@ def getAllDetailsHorariosBySalon(id_salon):
         return horarios_schema.dump(all_horarios), status.HTTP_200_OK
     except NoResultFound:
         return "Horarios not found", status.HTTP_401_UNAUTHORIZED
+      
+
+@horarios.route("/roomregister/horario/<string:id_salon>/<string:dia>", methods=["GET"])
+@cross_origin()
+def consultarHorarioSalon(id_salon, dia):
+    """Retorna el horario de un salón determinado día
+      ---
+      tags:
+        - Horario
+      parameters:
+        - name: id_salon
+          in: path
+          type: string
+          required: true
+          description: Identifier salon, example (SA401)
+        - name: dia
+          in: path
+          type: integer
+          required: true
+          description: Identifier dia, example (0-6)
+      responses:
+        200:
+          description: list horario
+          schema:
+            $ref: '#/definitions/Horario'
+      """
+    try:
+        detalleHorarioFound = Horario.query.join(DetalleHorario).join(GrupoMateria).join(Salon).filter(and_(Salon.id_salon== id_salon, GrupoMateria.id_grup_mat==Salon.grupo_materia, DetalleHorario.grupo_materia == GrupoMateria.id_grup_mat, Horario.id_horario == DetalleHorario.id_det_hor, Horario.dia == dia))
+    except NoResultFound:
+        return "no detail with this schedule can be found", status.HTTP_401_UNAUTHORIZED
+    return horarios_schema.dump(detalleHorarioFound), status.HTTP_200_OK
