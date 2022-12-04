@@ -164,7 +164,7 @@ def getAllDetailsHorariosBySalon(id_salon):
         return "Horarios not found", status.HTTP_401_UNAUTHORIZED
       
 
-@horarios.route("/roomregister/horario/<string:id_salon>/<string:dia>", methods=["GET"])
+@horarios.route("/roomregister/horario/<string:id_salon>/<int:dia>", methods=["GET"])
 @cross_origin()
 def consultarHorarioSalon(id_salon, dia):
     """Retorna el horario de un salón determinado día
