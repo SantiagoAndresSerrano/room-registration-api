@@ -22,7 +22,6 @@ marshmallow==3.17.1
 marshmallow-sqlalchemy==0.28.1
 mistune==2.0.4
 mysql-connector-python==8.0.30
-mysqlclient
 packaging==21.3
 postgres==4.0
 protobuf==3.20.1
