@@ -18,7 +18,7 @@ class GrupoMateria(db.Model):
 
 class GrupoMateriaSchema(ma.Schema):
     class Meta:
-        fields = ('id_grup_mat','periodo', 'cupos', 'id_docente','grupoRel', 'materiaRel')
+        fields = ('id_grup_mat','periodo', 'cupos','id_docente', 'grupoRel', 'materiaRel')
     grupoRel = fields.Nested(GrupoSchema(only=('id_grupo', 'estado')))
     materiaRel = fields.Nested(MateriaSchema(only=('id_materia', 'nombre')))
     

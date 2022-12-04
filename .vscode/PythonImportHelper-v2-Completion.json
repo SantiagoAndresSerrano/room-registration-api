@@ -411,6 +411,14 @@
         "documentation": {}
     },
     {
+        "label": "DetalleHorarioSchema",
+        "importPath": "app.models.detalle_horario",
+        "description": "app.models.detalle_horario",
+        "isExtraImport": true,
+        "detail": "app.models.detalle_horario",
+        "documentation": {}
+    },
+    {
         "label": "GrupoMateria",
         "importPath": "app.models.grupo_materia",
         "description": "app.models.grupo_materia",
@@ -424,6 +432,22 @@
         "description": "app.models.grupo_materia",
         "isExtraImport": true,
         "detail": "app.models.grupo_materia",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
         "documentation": {}
     },
     {
@@ -528,7 +552,7 @@
         "kind": 6,
         "importPath": "app.models.detalle_horario",
         "description": "app.models.detalle_horario",
-        "peekOfCode": "class DetalleHorario(db.Model):\n    __tablename__ = 'detalle_horario'\n    id_det_hor = db.Column(db.Integer, primary_key=True)\n    horario = db.Column(db.Integer, db.ForeignKey('horario.id_horario'))\n    grupo_materia = db.Column(db.Integer, db.ForeignKey('grupo_materia.id_grup_mat'))\n    horarioRel = db.relationship('Horario', back_populates=\"detalle_horario\",)\n    grupo_materiaRel = db.relationship('GrupoMateria', back_populates=\"detalle_horario\")\nclass DetalleHorarioSchema(ma.Schema):\n    class Meta:\n        fields = ('id_grup_mat','horarioRel', 'grupo_materiaRel')",
+        "peekOfCode": "class DetalleHorario(db.Model):\n    __tablename__ = 'detalle_horario'\n    id_det_hor = db.Column(db.Integer, primary_key=True)\n    horario = db.Column(db.Integer, db.ForeignKey('horario.id_horario'))\n    grupo_materia = db.Column(db.Integer, db.ForeignKey('grupo_materia.id_grup_mat'))\n    horarioRel = db.relationship('Horario', back_populates=\"detalle_horario\",)\n    grupo_materiaRel = db.relationship('GrupoMateria', back_populates=\"detalle_horario\")\nclass DetalleHorarioSchema(ma.Schema):\n    class Meta:\n        fields = ('id_det_hor','horarioRel', 'grupo_materiaRel')",
         "detail": "app.models.detalle_horario",
         "documentation": {}
     },
@@ -537,7 +561,7 @@
         "kind": 6,
         "importPath": "app.models.detalle_horario",
         "description": "app.models.detalle_horario",
-        "peekOfCode": "class DetalleHorarioSchema(ma.Schema):\n    class Meta:\n        fields = ('id_grup_mat','horarioRel', 'grupo_materiaRel')\n    horarioRel = fields.Nested(HorarioSchema(only=('id_horario', 'hora_inicio','hora_final')))\n    grupo_materiaRel = fields.Nested(GrupoMateriaSchema(only=('id_grup_mat','periodo', 'cupos', 'grupoRel', 'materiaRel')))\ndet_horario_schema = DetalleHorarioSchema()\ndets_horario_schema = DetalleHorarioSchema(many=True)",
+        "peekOfCode": "class DetalleHorarioSchema(ma.Schema):\n    class Meta:\n        fields = ('id_det_hor','horarioRel', 'grupo_materiaRel')\n    horarioRel = fields.Nested(HorarioSchema(only=('id_horario', 'hora_inicio','hora_final')))\n    grupo_materiaRel = fields.Nested(GrupoMateriaSchema(only=('id_grup_mat','periodo', 'cupos', 'grupoRel', 'materiaRel')))\ndet_horario_schema = DetalleHorarioSchema()\ndets_horario_schema = DetalleHorarioSchema(many=True)",
         "detail": "app.models.detalle_horario",
         "documentation": {}
     },
@@ -636,7 +660,7 @@
         "kind": 6,
         "importPath": "app.models.grupo_materia",
         "description": "app.models.grupo_materia",
-        "peekOfCode": "class GrupoMateria(db.Model):\n    __tablename__ = 'grupo_materia'\n    id_grup_mat = db.Column(db.Integer, primary_key=True)\n    periodo = db.Column(db.String(25), nullable=False)\n    cupos = db.Column(db.Integer, nullable=False)\n    grupo = db.Column(db.String(1), db.ForeignKey('grupo.id_grupo'))\n    materia = db.Column(db.Integer, db.ForeignKey('materia.id_materia'))\n    grupoRel= db.relationship('Grupo', back_populates=\"grupo_materia\")\n    materiaRel= db.relationship('Materia')\n    detalle_horario=db.relationship('DetalleHorario', back_populates=\"grupo_materiaRel\")",
+        "peekOfCode": "class GrupoMateria(db.Model):\n    __tablename__ = 'grupo_materia'\n    id_grup_mat = db.Column(db.Integer, primary_key=True)\n    periodo = db.Column(db.String(25), nullable=False)\n    cupos = db.Column(db.Integer, nullable=False)\n    id_docente = db.Column(db.String(), nullable=False)\n    grupo = db.Column(db.String(1), db.ForeignKey('grupo.id_grupo'))\n    materia = db.Column(db.Integer, db.ForeignKey('materia.id_materia'))\n    grupoRel= db.relationship('Grupo', back_populates=\"grupo_materia\")\n    materiaRel= db.relationship('Materia')",
         "detail": "app.models.grupo_materia",
         "documentation": {}
     },
@@ -645,7 +669,7 @@
         "kind": 6,
         "importPath": "app.models.grupo_materia",
         "description": "app.models.grupo_materia",
-        "peekOfCode": "class GrupoMateriaSchema(ma.Schema):\n    class Meta:\n        fields = ('id_grup_mat','periodo', 'cupos', 'grupoRel', 'materiaRel')\n    grupoRel = fields.Nested(GrupoSchema(only=('id_grupo', 'estado')))\n    materiaRel = fields.Nested(MateriaSchema(only=('id_materia', 'nombre')))\ngrupo_materia_schema = GrupoMateriaSchema()\ngrupos_materia_schema = GrupoMateriaSchema(many=True)",
+        "peekOfCode": "class GrupoMateriaSchema(ma.Schema):\n    class Meta:\n        fields = ('id_grup_mat','periodo', 'cupos','id_docente', 'grupoRel', 'materiaRel')\n    grupoRel = fields.Nested(GrupoSchema(only=('id_grupo', 'estado')))\n    materiaRel = fields.Nested(MateriaSchema(only=('id_materia', 'nombre')))\ngrupo_materia_schema = GrupoMateriaSchema()\ngrupos_materia_schema = GrupoMateriaSchema(many=True)",
         "detail": "app.models.grupo_materia",
         "documentation": {}
     },
@@ -672,7 +696,7 @@
         "kind": 6,
         "importPath": "app.models.horario",
         "description": "app.models.horario",
-        "peekOfCode": "class Horario(db.Model):\n    __tablename__ = 'horario'\n    id_horario = db.Column(db.Integer, primary_key=True)\n    dia = db.Column(db.String(25), nullable=False)\n    hora_inicio = db.Column(DateTime(timezone=False),server_default=func.now(),nullable=False)\n    hora_final = db.Column(DateTime(timezone=False),server_default=func.now(),nullable=False)\n    detalle_horario= db.relationship('DetalleHorario', back_populates=\"horarioRel\",)\n    def __repr__(self):\n        return '<Horario %r>' % self.id_horario % self.hora_inicio & self.hora_Final\nclass HorarioSchema(ma.Schema):",
+        "peekOfCode": "class Horario(db.Model):\n    __tablename__ = 'horario'\n    id_horario = db.Column(db.Integer, primary_key=True)\n    dia = db.Column(db.Integer, nullable=False)\n    hora_inicio = db.Column(DateTime(timezone=False),server_default=func.now(),nullable=False)\n    hora_final = db.Column(DateTime(timezone=False),server_default=func.now(),nullable=False)\n    detalle_horario= db.relationship('DetalleHorario', back_populates=\"horarioRel\",)\n    def __repr__(self):\n        return '<Horario %r>' % self.id_horario % self.hora_inicio & self.hora_Final\nclass HorarioSchema(ma.Schema):",
         "detail": "app.models.horario",
         "documentation": {}
     },
@@ -871,6 +895,15 @@
         "importPath": "app.routes.horario",
         "description": "app.routes.horario",
         "peekOfCode": "def getAllDetailsHorariosBySalon(id_salon):\n    \"\"\"Returning list details all horario by Salon\n    ---\n    tags:\n      - Horario\n    parameters:\n      - name: id_salon\n        in: path\n        type: string\n        required: true",
+        "detail": "app.routes.horario",
+        "documentation": {}
+    },
+    {
+        "label": "consultarHorarioSalon",
+        "kind": 2,
+        "importPath": "app.routes.horario",
+        "description": "app.routes.horario",
+        "peekOfCode": "def consultarHorarioSalon(id_salon, dia):\n    \"\"\"Retorna el horario de un salón determinado día\n      ---\n      tags:\n        - Horario\n      parameters:\n        - name: id_salon\n          in: path\n          type: string\n          required: true",
         "detail": "app.routes.horario",
         "documentation": {}
     },
