@@ -70,7 +70,8 @@ def getAllSalonesDisponibles():
     """
     try:
         all_salones = Salon.query.filter(Salon.estado == 1)
-        return salones_schema.dump(all_salones), status.HTTP_200_OK
+        salon1_schema = SalonSchema(only=('id_salon','estado'), many=True)
+        return salon1_schema.dump(all_salones), status.HTTP_200_OK
     except NoResultFound:
         return "Salones not found", status.HTTP_401_UNAUTHORIZED
 
