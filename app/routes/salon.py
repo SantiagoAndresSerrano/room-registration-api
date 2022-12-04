@@ -55,6 +55,25 @@ def getAllSalones():
     except NoResultFound:
         return "Salones not found", status.HTTP_401_UNAUTHORIZED
 
+@salones.route("/roomregister/salon/disponibles" , methods=["GET"])
+@cross_origin()
+def getAllSalonesDisponibles():
+    """Retorna todos los salones disponibles
+    ---
+    tags:
+      - Salon
+    responses:
+      200:
+        description: A list of available rooms
+        schema:
+          $ref: '#/definitions/Salon'
+    """
+    try:
+        all_salones = Salon.query.filter(Salon.estado == 1)
+        return salones_schema.dump(all_salones), status.HTTP_200_OK
+    except NoResultFound:
+        return "Salones not found", status.HTTP_401_UNAUTHORIZED
+
 ##Encontrar un salón
 @salones.route("/roomregister/salon/<string:id_salon>", methods=["GET"])
 @cross_origin()
