@@ -153,7 +153,31 @@ def consultarSalon(id_salon, fechaInicio, fechaFin):
         return "no room with this schedule can be found", status.HTTP_401_UNAUTHORIZED
     return salon1_schema.dump(salonFound), status.HTTP_200_OK
 
-
+@salones.route("/roomregister/salon/docente/<string:id_docente>", methods=["GET"])
+@cross_origin()
+def encontrarSalonByDocente(id_docente):
+    """Retorna los salones en los que un docente dicta clases
+      ---
+      tags:
+        - Salon
+      parameters:
+        - name: id_docente
+          in: path
+          type: string
+          required: true
+          description: Identifier docente
+      
+      responses:
+        200:
+          description: list salones
+          schema:
+            $ref: '#/definitions/Salon'
+      """
+    try:
+      salonesFound = Salon.query.join(GrupoMateria).filter(and_(GrupoMateria.id_grup_mat == Salon.grupo_materia, GrupoMateria.id_docente == id_docente))
+    except NoResultFound:
+        return "Salon not found", status.HTTP_401_UNAUTHORIZED
+    return salones_schema.dump(salonesFound), status.HTTP_200_OK
 
 # @salones.route("/roomregister/salon/<string:id_salon>/reservar", methods=["POST"])
 # @cross_origin()

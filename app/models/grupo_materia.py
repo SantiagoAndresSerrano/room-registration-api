@@ -8,7 +8,7 @@ class GrupoMateria(db.Model):
     id_grup_mat = db.Column(db.Integer, primary_key=True)
     periodo = db.Column(db.String(25), nullable=False)
     cupos = db.Column(db.Integer, nullable=False)
-    id_docente = db.Column(db.String(), nullable=False)
+    id_docente =  db.Column(db.String())
     grupo = db.Column(db.String(1), db.ForeignKey('grupo.id_grupo'))
     materia = db.Column(db.Integer, db.ForeignKey('materia.id_materia'))
     grupoRel= db.relationship('Grupo', back_populates="grupo_materia")
