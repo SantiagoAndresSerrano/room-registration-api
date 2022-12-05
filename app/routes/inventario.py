@@ -27,6 +27,8 @@ def getDetalleinventario():
           properties:
               id_detalle:
                 type: integer
+              cantidad:
+                type:integer
               tipoRel:
                 type: object
                 properties:
