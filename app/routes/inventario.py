@@ -1,5 +1,6 @@
 from flask import Blueprint, request
 from flask_api import status
+from app.models.detalle_inventario import DetalleInventarioSchema
 from ..config.db import db
 from sqlalchemy.exc import NoResultFound
 from flask_cors import cross_origin
@@ -19,9 +20,9 @@ def getDetalleinventario():
     """Retorna el detalle de todos los elementos de un salón
     ---
     tags:
-      - Salon
+      - Inventario
     definitions:
-        DetalleInventario:
+        Inventario:
           type: object
           properties:
               id_detalle:
@@ -60,10 +61,36 @@ def getDetalleinventario():
       200:
         description: Lista de detalle en el inventario del salón
         schema:
-          $ref: '#/definitions/DetalleInventario'
+          $ref: '#/definitions/Inventario'
     """
     try:
         allDetalles = DetalleInventario.query.all()
+        return detallesInven_schema.dump(allDetalles), status.HTTP_200_OK
+    except NoResultFound:
+        return "Detalles inventario not found", status.HTTP_401_UNAUTHORIZED
+
+#Retorna todos los detalles de los inventarios
+@inventario.route("/roomregister/inventario/<string:id_salon>", methods=["GET"])
+@cross_origin()
+def getDetalleinventarioSalon(id_salon):
+    """Retorna el detalle de todos los elementos de un salón
+    ---
+    tags:
+      - Inventario
+    parameters:
+      - name: id_salon
+        in: path
+        type: string
+        required: true
+        description: Identifier salon, example (SA401)
+    responses:
+      200:
+        description: Lista de detalle en el inventario del salón
+        schema:
+          $ref: '#/definitions/Inventario'
+    """
+    try:
+        allDetalles = DetalleInventario.query.filter(DetalleInventario.salon == id_salon)
         return detallesInven_schema.dump(allDetalles), status.HTTP_200_OK
     except NoResultFound:
         return "Detalles inventario not found", status.HTTP_401_UNAUTHORIZED
@@ -100,5 +127,6 @@ def getAllTipoInventario():
         return "Tipo de inventario not found", status.HTTP_401_UNAUTHORIZED
     
 ##Retorna los elementos de un determinado salón
+
 
 ##Editar el estado de un determinado elemento de un salón 
