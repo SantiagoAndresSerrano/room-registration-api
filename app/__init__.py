@@ -5,7 +5,7 @@ from flask_cors import CORS
 from flasgger import Swagger, LazyString, LazyJSONEncoder
 import os
 from dotenv import load_dotenv
-import py_eureka_client.eureka_client as eureka_clients
+
 
 from .models.grupo_materia import GrupoMateria, grupos_materia_schema
 
