@@ -170,7 +170,8 @@ def consultarSalon(id_salon, fechaInicio, fechaFin):
         salonFound = Salon.query.join(GrupoMateria).join(DetalleHorario).join(Horario).filter(and_(Salon.id_salon== id_salon, GrupoMateria.id_grup_mat==Salon.grupo_materia, DetalleHorario.grupo_materia == GrupoMateria.id_grup_mat, Horario.id_horario == DetalleHorario.id_det_hor,fechaInicio == Horario.hora_inicio, fechaFin == Horario.hora_final)).one()
         salon1_schema = SalonSchema(only=('id_salon','estado'))
     except NoResultFound:
-        return "no room with this schedule can be found", status.HTTP_401_UNAUTHORIZED
+        return {"estado":"1"}, status.HTTP_200_OK
+        
     return salon1_schema.dump(salonFound), status.HTTP_200_OK
 
 @salones.route("/roomregister/salon/docente/<string:id_docente>", methods=["GET"])
